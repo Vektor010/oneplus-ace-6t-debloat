@@ -1,0 +1,13 @@
+# Log files
+*.log
+*.tmp
+
+# Runtime Backups folder
+Backups/
+
+# User cache
+*.cache
+
+# Archives (kept in GitHub Releases, not in repository git tree)
+*.zip
+platform-tools/
