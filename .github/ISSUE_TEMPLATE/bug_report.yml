@@ -1,0 +1,45 @@
+name: 🐛 Bug Report
+description: Report a malfunction, broken package dependency, or device connection issue.
+title: "[BUG]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue! Please ensure you have reviewed [KNOWN_ISSUES.md](../KNOWN_ISSUES.md) before submitting.
+
+  - type: input
+    id: device_model
+    attributes:
+      label: Device Model & OS Build
+      description: Exact model string from Settings > About Device (e.g. OnePlus Ace 6T PLR110, ColorOS 16.0.10.500 CN01).
+      placeholder: "OnePlus Ace 6T (PLR110), ColorOS 16 CN01"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: Clear and concise description of what went wrong.
+    validations:
+      required: true
+
+  - type: textarea
+    id: console_log
+    attributes:
+      label: Console Output / Terminal Log
+      description: Copy and paste the relevant terminal output from Run_Debloat.bat.
+      render: shell
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Verification Checklist
+      options:
+        - label: "I have enabled USB Debugging and 'Disable permission monitoring'."
+          required: true
+        - label: "My device is a OnePlus Ace 6T (PLR110)."
+          required: true
+        - label: "I verified that the archive was extracted before running."
+          required: true
