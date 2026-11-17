@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Vektor010/oneplus-ace-6t-debloat/main/assets/hero.gif" width="100%" alt="AceDebloat Banner" />
+  <img src="https://raw.githubusercontent.com/Vektor010/oneplus-ace-6t-debloat/main/assets/animations/hero.gif" width="100%" alt="AceDebloat Banner" />
 </p>
 
 <p align="center">
@@ -214,7 +214,7 @@ Run `Run_Debloat.bat` ➔ select Option **`[5] Complete Factory Rollback`** ➔ 
 
 ## 🤝 Contributing
 
-Contributions, package additions, and translations are warmly welcomed. Please review [CONTRIBUTING.md](CONTRIBUTING.md) and run the automated test suite before opening a pull request:
+Contributions, package additions, and translations are warmly welcomed. Please review [CONTRIBUTING.md](docs/development/CONTRIBUTING.md) and run the automated test suite before opening a pull request:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File tests/test_script_syntax.ps1
