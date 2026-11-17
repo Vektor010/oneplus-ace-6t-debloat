@@ -1,84 +1,81 @@
 <div align="center">
 
-<img src="./assets/hero_banner.svg" width="100%" alt="OnePlus Ace 6T Debloat Toolbox Banner">
+<img src="./assets/banner.gif" width="100%" alt="OnePlus Ace 6T ColorOS 16 CN Debloat Toolbox">
 
 <br><br>
 
-[![Скачать готовый архив](https://img.shields.io/github/v/release/Vektor010/oneplus-ace-6t-debloat?style=for-the-badge&logo=github&label=СКАЧАТЬ%20ГОТОВЫЙ%20АРХИВ%20%28ADB%20%2B%20ДРАЙВЕР%20ВНУТРИ%29&color=10b981)](https://github.com/Vektor010/oneplus-ace-6t-debloat/releases/latest)
+### Безопасная очистка, заморозка китайских служб и анализ батареи для **OnePlus Ace 6T (PLR110 · ColorOS 16 CN01)**
+
+Без Root · Автобэкап · Рабочий ADB и USB-драйвер уже в архиве · Полный откат в 1 клик
 
 <br>
 
-[![OnePlus Ace 6T](https://img.shields.io/badge/OnePlus_Ace_6T-PLR110-EB0028?style=flat-square)](#)
-[![ColorOS 16](https://img.shields.io/badge/ColorOS_16-CN01-2563EB?style=flat-square)](#)
-[![ADB Included](https://img.shields.io/badge/ADB_%2B_Driver-Готовый_ZIP-7C3AED?style=flat-square)](https://github.com/Vektor010/oneplus-ace-6t-debloat/releases/latest)
-[![No Root](https://img.shields.io/badge/Root-Не_нужен-10B981?style=flat-square)](#)
-[![Rollback](https://img.shields.io/badge/Откат-100%25_в_1_клик-F97316?style=flat-square)](#)
+**[⬇️ Скачать готовый архив `OnePlus_Ace6T_Debloat_Tool.zip` (Releases)](https://github.com/Vektor010/oneplus-ace-6t-debloat/releases/latest)**
 
 <br>
 
-[👶 Гайд новичкам](#-установка-и-запуск-для-новичков) &bull; [📊 Графики](#-аналитика-и-безопасность) &bull; [🏝️ Вернуть «Остров» и функции](#️-как-вернуть-нужную-функцию-отдельно) &bull; [📋 Все 95 пакетов](#-справочник-всех-95-пакетов) &bull; [❓ FAQ](#-частые-вопросы)
+[Инструкция новичкам](#-установка-и-запуск-для-новичков) &nbsp;&bull;&nbsp; [Вернуть «Остров» и функции](#-как-вернуть-нужную-функцию-отдельно) &nbsp;&bull;&nbsp; [Все 95 пакетов](#-справочник-всех-95-пакетов) &nbsp;&bull;&nbsp; [FAQ](#-частые-вопросы)
 
 </div>
 
 ---
 
+## Что делает этот инструмент
+
+Инструмент переносит проверенную рабочую конфигурацию **OnePlus Ace 6T (PLR110, ColorOS 16 CN01)** на ваш смартфон в один клик:
+
+* **Отключает 82 лишних пакета (`pm disable-user`)** — убирает китайские сервисы (Baidu, AutoNavi, FinShell, UnionPay, HeyTap Music/Yoli), тяжёлый 3D-движок живых обоев (`colorfulengine`), фоновую телеметрию и лишние региональные службы.
+* **Замораживает 13 защищённых служб (`pm suspend`)** — полностью останавливает в фоне **HeyTap Browser**, **App Market**, рекламу **Oppo Ads**, карусель обоев экрана блокировки, **Breeno Voice** и китайский защитник **Security Guard**.
+* **Анализирует жор батареи (`Top App Drain`)** — считывает `dumpsys batterystats` и показывает реальный ТОП-15 приложений по расходу заряда в **мА·ч (mAh)**.
+* **Ускоряет систему (`ART speed-profile`)** — безопасно очищает системный кэш и компилирует приложения под процессор Snapdragon для плавных анимаций.
+
 > [!IMPORTANT]
-> **Защита от «кирпича»:** Скрипт работает **без Root**, не трогает `/system` и не удаляет ваши фото и данные. Перед запуском проверяется точная модель **`PLR110`** и регион **`CN01`** — на другом смартфоне скрипт остановится сам.
+> **Защита от «кирпича»:** Скрипт работает без Root, не затрагивает раздел `/system` и сохраняет все ваши фото и данные. Перед запуском автоматически проверяется модель **`PLR110`** и регион **`CN01`** — на другом смартфоне скрипт остановится. Клавиатура (Gboard), рабочий стол, связь, Google Play (`gms`, `vending`) и VPN защищены жёстким белым списком.
 
 ---
 
-## 📊 Аналитика и безопасность
-
-<p align="center">
-  <img src="./assets/analytics_chart.svg" width="100%" alt="Debloat Package Analytics and Before/After Impact">
-</p>
-
-<p align="center">
-  <img src="./assets/safety_pipeline.svg" width="100%" alt="Zero-Brick Safety Architecture Pipeline">
-</p>
-
----
-
-## 👶 Установка и запуск для новичков
+## 🚀 Установка и запуск для новичков
 
 > [!NOTE]
-> **Ничего отдельно искать и скачивать не нужно.** В готовом архиве уже лежат рабочий портативный **ADB** (`platform-tools`), официальный **Google USB Driver** (`Drivers/usb_driver`), лаунчер в 1 клик (`Run_Debloat.bat`) и оффлайн-инструкция (`ИНСТРУКЦИЯ_ДЛЯ_НОВИЧКОВ.txt`).
+> **Ничего дополнительно искать не нужно.** В архиве уже лежат рабочий портативный **ADB** (`platform-tools`), официальный **Google USB Driver** (`Drivers/usb_driver`), запуск в 1 клик (`Run_Debloat.bat`) и оффлайн-гайд (`ИНСТРУКЦИЯ_ДЛЯ_НОВИЧКОВ.txt`).
 
-### 1. Скачайте и распакуйте
-Перейдите в [**Releases**](https://github.com/Vektor010/oneplus-ace-6t-debloat/releases/latest), скачайте **`OnePlus_Ace6T_Debloat_Tool.zip`** и распакуйте его в отдельную папку *(правый клик → «Извлечь все...»)*.
+### Шаг 1. Скачайте и распакуйте архив
+Скачайте [**`OnePlus_Ace6T_Debloat_Tool.zip`**](https://github.com/Vektor010/oneplus-ace-6t-debloat/releases/latest) и **распакуйте** в отдельную папку *(правый клик → «Извлечь все...»)*. Не запускайте файлы прямо внутри окна архиватора.
 
-### 2. Включите отладку на OnePlus Ace 6T
-* Откройте **Настройки** ➔ **Об устройстве** ➔ **Версия** ➔ нажмите **7 раз** по **Номеру сборки**.
-* Перейдите в **Настройки** ➔ **Дополнительные настройки** *(или Система и обновления)* ➔ **Для разработчиков**.
-* Включите **«Отладка по USB»** и *(рекомендуется)* **«Отключить мониторинг разрешений»**.
+### Шаг 2. Включите отладку по USB на телефоне
+1. Откройте **Настройки** ➔ **Об устройстве** ➔ **Версия** ➔ нажмите **7 раз** на **Номер сборки**.
+2. Перейдите в **Настройки** ➔ **Дополнительные настройки** *(или Система и обновления)* ➔ **Для разработчиков**.
+3. Включите **«Отладка по USB»** и *(рекомендуется для ColorOS)* **«Отключить мониторинг разрешений»**.
 
-### 3. Подключите кабель (и проверьте драйвер)
-* Подключите телефон кабелем к ПК, разблокируйте экран и в шторке переключите USB в режим **«Передача файлов»**.
-* **На Windows 10 / 11 драйвер уже встроен (`WinUSB`)** — телефон определится сам за 5 секунд.
+### Шаг 3. Подключите к ПК
+1. Подключите OnePlus Ace 6T к ПК кабелем USB и разблокируйте экран.
+2. В шторке уведомлений выберите режим USB **«Передача файлов»** *(не оставляйте «Только зарядка»)*.
+3. На **Windows 10 / 11** драйвер (`WinUSB`) уже встроен в систему — смартфон определяется автоматически.
 
 <details>
-<summary>🔌 <b>Если Windows не видит телефон (3 способа установить драйвер)</b></summary>
+<summary>Если Windows не видит телефон — 3 способа поставить драйвер</summary>
 <br>
 
-1. **Встроенный в телефон драйвер:** откройте «Этот компьютер» ➔ виртуальный CD-диск `OnePlus Drivers` ➔ запустите `OnePlus_USB_Drivers_Setup.exe`.
-2. **Официальный драйвер Google (уже в архиве):** `Win + X` ➔ **Диспетчер устройств** ➔ ПКМ по устройству с жёлтым треугольником (`一加 Ace 6T` / `ADB Interface`) ➔ **Обновить драйвер** ➔ **Найти на этом компьютере** ➔ **Выбрать из списка** ➔ **Показать все устройства** ➔ **Установить с диска...** ➔ укажите `Drivers\usb_driver\android_winusb.inf` ➔ выберите **Android ADB Interface**.
+1. **Встроенный драйвер OnePlus:** откройте «Этот компьютер» ➔ виртуальный диск `OnePlus Drivers` ➔ запустите `OnePlus_USB_Drivers_Setup.exe`.
+2. **Официальный Google USB Driver (уже в архиве):** нажмите `Win + X` ➔ **Диспетчер устройств** ➔ ПКМ по устройству с жёлтым треугольником (`一加 Ace 6T` / `ADB Interface`) ➔ **Обновить драйвер** ➔ **Найти на этом компьютере** ➔ **Выбрать из списка** ➔ **Показать все устройства** ➔ **Установить с диска...** ➔ выберите `Drivers\usb_driver\android_winusb.inf` ➔ **Android ADB Interface**.
 3. **Установщик в 1 клик:** скачайте официальный [Universal ADB Driver (.msi)](https://github.com/koush/adb.clockworkmod.com/releases/latest).
 
 </details>
 
-### 4. Запустите в 1 клик
-* Откройте распакованную папку и запустите **`Run_Debloat.bat`**.
-* **На экране телефона** поставьте галочку *«Всегда разрешать»* и нажмите **«Разрешить»**.
-* В меню введите **`1`** ➔ подтвердите **`1`** ➔ дождитесь завершения (~20 сек) и перезагрузите смартфон.
+### Шаг 4. Запустите `Run_Debloat.bat`
+1. Дважды кликните по **`Run_Debloat.bat`** *(если появится окно Windows SmartScreen — нажмите «Подробнее» → «Выполнить в любом случае»)*.
+2. **На экране смартфона** отметьте *«Всегда разрешать с этого компьютера»* и нажмите **«Разрешить»**.
+3. В главном меню введите **`1`** ➔ подтвердите **`1`** ➔ дождитесь завершения (~20 сек) и перезагрузите смартфон.
 
 ---
 
 ## 🏝️ Как вернуть нужную функцию отдельно
 
-Если вы применили полный слепок, но хотите вернуть **только одну функцию** (например, **«Остров»**, **AOD** или **скриншоты**) — откройте папку `platform-tools`, введите `cmd` в адресной строке проводника (`Enter`) и скопируйте нужный блок кнопкой справа сверху.
+Если после применения слепка вы хотите вернуть **только одну конкретную функцию** (не откатывая всё целиком):  
+откройте папку `platform-tools` из архива, введите `cmd` в адресной строке проводника (`Enter`) и вставьте нужную команду кнопкой копирования справа сверху блока.
 
-### 🏝️ Вернуть «Остров» (Fluid Cloud / Живые оповещения / Плеер у камеры)
-За работу динамической капсулы вокруг камеры отвечают системная шина `OCS`, контроллер медиа и движок сценариев:
+### Вернуть «Остров» (Fluid Cloud / Живые оповещения / Плеер у камеры)
+За работу динамического острова вокруг камеры отвечают системная шина `OCS`, контроллер медиа и движок сценариев:
 
 ```cmd
 adb shell pm enable --user 0 com.coloros.ocs.opencapabilityservice
@@ -90,72 +87,72 @@ adb shell pm enable --user 0 com.coloros.sceneservice
 ```
 
 > [!TIP]
-> После включения пакетов **«Острова»** или **AOD** обязательно перезагрузите смартфон (`adb reboot`).
+> После возврата **«Острова»** или **AOD** перезагрузите телефон (`adb reboot`), чтобы ColorOS заново запустила службы.
 
-### 🕒 Вернуть Always-On Display (AOD)
+### Вернуть Always-On Display (AOD)
 
 ```cmd
 adb shell pm enable --user 0 com.oplus.aod
 ```
 
-### 📸 Вернуть расширенные скриншоты и запись экрана
+### Вернуть расширенные скриншоты и запись экрана
 
 ```cmd
 adb shell pm enable --user 0 com.oplus.screenshot
 adb shell pm enable --user 0 com.oplus.screenrecorder
 ```
 
-### 📱 Вернуть Умную боковую панель (Smart Sidebar)
+### Вернуть Умную боковую панель (Smart Sidebar)
 
 ```cmd
 adb shell pm enable --user 0 com.coloros.smartsidebar
 ```
 
-### 🎮 Вернуть Игровой режим (Game Toolkit / Игры)
+### Вернуть Игровой режим (Game Toolkit)
 
 ```cmd
 adb shell pm enable --user 0 com.oplus.games
 ```
 
 <details>
-<summary>🔧 <b>Остальные функции (Диктофон, Компас, ИК-пульт, OShare, Android Auto, Gmail, Браузер)</b></summary>
+<summary>Показать команды для остальных функций (Диктофон, Компас, ИК-пульт, OShare, Android Auto, Gmail, Браузер)</summary>
 <br>
 
-**🎙️ Диктофон и 🧭 Компас:**
+**Диктофон и Компас:**
 ```cmd
 adb shell pm enable --user 0 com.coloros.soundrecorder
 adb shell pm enable --user 0 com.coloros.compass2
 ```
 
-**📺 ИК-пульт (ТВ / кондиционер):**
+**ИК-пульт (управление ТВ / кондиционером):**
 ```cmd
 adb shell pm enable --user 0 com.oplus.consumerIRApp
 ```
 
-**👁️ Защита зрения (Eye Comfort):**
+**Защита зрения (Eye Comfort):**
 ```cmd
 adb shell pm enable --user 0 com.oplus.eyeprotect
 ```
 
-**🔄 OShare и 🖥️ Трансляция экрана:**
+**OShare и Трансляция экрана:**
 ```cmd
 adb shell pm enable --user 0 com.coloros.oshare
 adb shell pm enable --user 0 com.coloros.sharescreen
 ```
 
-**🚗 Android Auto:**
+**Android Auto:**
 ```cmd
 adb shell pm enable --user 0 com.google.android.projection.gearhead
 ```
 
-**📧 Gmail, Google Поиск и Google Объектив (Lens):**
+**Gmail, Google Поиск и Google Объектив (Lens):**
 ```cmd
 adb shell pm enable --user 0 com.google.android.gm
 adb shell pm enable --user 0 com.google.android.googlequicksearchbox
 adb shell pm enable --user 0 com.google.ar.lens
 ```
 
-**❄️ Разморозить китайский браузер, App Market или Магазин тем:**
+**Разморозить китайский браузер, App Market или Магазин тем:**
 ```cmd
 adb shell pm unsuspend --user 0 com.heytap.browser
 adb shell pm unsuspend --user 0 com.heytap.market
@@ -169,10 +166,10 @@ adb shell pm unsuspend --user 0 com.oplus.themestore
 ## 📋 Справочник всех 95 пакетов
 
 Ниже расписан **каждый** пакет из скрипта (82 отключаемых + 13 замораживаемых).  
-Метка `🟡` означает, что пакет отвечает за видимую функцию интерфейса (её легко вернуть командами выше).
+Значок `🟡` отмечает пакеты, отвечающие за видимые функции интерфейса (их можно вернуть отдельно командами выше).
 
 <details open>
-<summary><b>❄️ 13 замороженных служб ColorOS (<code>pm suspend --user 0</code>)</b></summary>
+<summary><b>13 замороженных служб ColorOS (<code>pm suspend --user 0</code>)</b></summary>
 <br>
 
 | Пакет | За что отвечает |
@@ -194,7 +191,7 @@ adb shell pm unsuspend --user 0 com.oplus.themestore
 </details>
 
 <details>
-<summary><b>🎨 31 пакет: Утилиты и функции ColorOS / OPlus (<code>pm disable-user</code>)</b></summary>
+<summary><b>31 пакет — Утилиты и функции ColorOS / OPlus (<code>pm disable-user</code>)</b></summary>
 <br>
 
 | Пакет | За что отвечает |
@@ -234,7 +231,7 @@ adb shell pm unsuspend --user 0 com.oplus.themestore
 </details>
 
 <details>
-<summary><b>🇨🇳 15 пакетов: Китайские сервисы и партнёрский софт (<code>pm disable-user</code>)</b></summary>
+<summary><b>15 пакетов — Китайские сервисы и партнёрский софт (<code>pm disable-user</code>)</b></summary>
 <br>
 
 | Пакет | За что отвечает |
@@ -258,7 +255,7 @@ adb shell pm unsuspend --user 0 com.oplus.themestore
 </details>
 
 <details>
-<summary><b>📡 14 пакетов: Телеметрия, логи и рекламные SDK (<code>pm disable-user</code>)</b></summary>
+<summary><b>14 пакетов — Телеметрия, логи и рекламные SDK (<code>pm disable-user</code>)</b></summary>
 <br>
 
 | Пакет | За что отвечает |
@@ -281,7 +278,7 @@ adb shell pm unsuspend --user 0 com.oplus.themestore
 </details>
 
 <details>
-<summary><b>🚗 5 пакетов: Автомобильные сервисы и IoT (<code>pm disable-user</code>)</b></summary>
+<summary><b>5 пакетов — Автомобильные сервисы и IoT (<code>pm disable-user</code>)</b></summary>
 <br>
 
 | Пакет | За что отвечает |
@@ -295,7 +292,7 @@ adb shell pm unsuspend --user 0 com.oplus.themestore
 </details>
 
 <details>
-<summary><b>⚙️ 13 пакетов: Редко используемые службы Android / Qualcomm / MS (<code>pm disable-user</code>)</b></summary>
+<summary><b>13 пакетов — Редко используемые службы Android / Qualcomm / MS (<code>pm disable-user</code>)</b></summary>
 <br>
 
 | Пакет | За что отвечает |
@@ -317,7 +314,7 @@ adb shell pm unsuspend --user 0 com.oplus.themestore
 </details>
 
 <details>
-<summary><b>🌐 4 пакета: Доп. приложения Google (Play Market и GMS НЕ тронуты)</b></summary>
+<summary><b>4 пакета — Доп. приложения Google (Play Market и GMS НЕ тронуты)</b></summary>
 <br>
 
 | Пакет | За что отвечает |
@@ -336,25 +333,25 @@ adb shell pm unsuspend --user 0 com.oplus.themestore
 <details>
 <summary><b>Как полностью откатить всё обратно?</b></summary>
 <br>
-Запустите <code>Run_Debloat.bat</code> ➔ выберите пункт <b>[4] Полный откат</b> ➔ подтвердите цифрой <b>1</b>. Все 82 отключённых и 13 замороженных пакетов мгновенно вернутся в исходное состояние.
+Запустите <code>Run_Debloat.bat</code> ➔ выберите пункт <b>[4] Полный откат</b> ➔ подтвердите цифрой <b>1</b>. Все 82 отключённых и 13 замороженных пакетов вернутся в заводское состояние.
 </details>
 
 <details>
 <summary><b>Не сломается ли Google Play, связь или уведомления?</b></summary>
 <br>
-Нет. <code>com.google.android.gms</code> (Google Play Services), <code>com.android.vending</code> (Google Play), активная клавиатура, лаунчер, телефония и VPN находятся в жёстком белом списке и защищены на уровне кода.
+Нет. <code>com.google.android.gms</code> (Google Play Services), <code>com.android.vending</code> (Google Play), активная клавиатура, рабочий стол, связь и VPN защищены жёстким белым списком и не затрагиваются.
 </details>
 
 <details>
-<summary><b>Как посмотреть, какое приложение жрёт батарею?</b></summary>
+<summary><b>Как узнать, какое приложение сажает батарею?</b></summary>
 <br>
-Выберите в меню пункт <b>[3] Анализ расхода батареи</b> — скрипт прочитает <code>dumpsys batterystats</code> и выведет ТОП-15 потребителей энергии в <b>мА·ч (mAh)</b> с подсветкой фоновых мессенджеров и маркетплейсов.
+Запустите <code>Run_Debloat.bat</code> и выберите пункт <b>[3] Анализ расхода батареи</b> — скрипт выведет ТОП-15 приложений по реальному расходу энергии в <b>мА·ч (mAh)</b>.
 </details>
 
 ---
 
 <div align="center">
 
-<sub><b>OnePlus Ace 6T (PLR110 · ColorOS 16 CN01)</b> &bull; By <b>Vektor010</b> &bull; Лицензия MIT &bull; 2026</sub>
+<sub><b>OnePlus Ace 6T (PLR110 · ColorOS 16 CN01)</b> &bull; Debloat &amp; Battery Optimization Tool &bull; By <b>Vektor010</b> &bull; MIT</sub>
 
 </div>
