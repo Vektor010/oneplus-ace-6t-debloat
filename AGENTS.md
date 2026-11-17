@@ -59,7 +59,21 @@ Any AI modifying this codebase **must** adhere to the following constraints with
 
 ---
 
-## 4. Documentation Synchronization Protocol
+## 4. Universal Documentation Map
+All AI coding agents (ChatGPT, Claude Code, Gemini, Copilot, Cursor, Windsurf) and human contributors must refer to documentation in `docs/`:
+
+- **Architecture & Design**: [`docs/architecture/ARCHITECTURE.md`](docs/architecture/ARCHITECTURE.md)
+- **Architecture Decision Records (ADRs)**: [`docs/architecture/DECISIONS.md`](docs/architecture/DECISIONS.md)
+- **Current Project State (SSOT)**: [`docs/project/PROJECT_STATE.md`](docs/project/ROADMAP.md)
+- **Public Roadmap**: [`docs/project/ROADMAP.md`](docs/project/ROADMAP.md)
+- **Changelog**: [`docs/project/CHANGELOG.md`](docs/project/CHANGELOG.md)
+- **Contribution Guidelines**: [`docs/development/CONTRIBUTING.md`](docs/development/CONTRIBUTING.md)
+- **Development & Packaging**: [`docs/development/DEVELOPMENT.md`](docs/development/DEVELOPMENT.md)
+- **Known Issues & FAQ**: [`docs/guides/KNOWN_ISSUES.md`](docs/guides/KNOWN_ISSUES.md)
+- **Support & Community**: [`docs/guides/SUPPORT.md`](docs/guides/SUPPORT.md)
+- **Security Policy**: [`docs/security/SECURITY.md`](docs/security/SECURITY.md)
+
+## 5. Documentation Synchronization Protocol
 Whenever code or package databases are modified:
 1. Update `OnePlus_Ace6T_Clone_Debloat.ps1` package arrays.
 2. Update `README.md` (English) and `README_RU.md` (Russian).
@@ -69,7 +83,7 @@ Whenever code or package databases are modified:
 
 ---
 
-## 5. Build & Packaging Instructions
+## 6. Build & Packaging Instructions
 - Distribution Archive: `OnePlus_Ace6T_Debloat_Tool.zip`
 - Source folder: `OnePlus_Ace6T_Debloat_Package/`
 - Archive must contain:
