@@ -1,7 +1,7 @@
 ﻿#Requires -Version 5.1
 <#
 .SYNOPSIS
-    Точный слепок оптимизации, деблоата, заморозки и анализа батареи для OnePlus Ace 6T (ColorOS 16 CN).
+    Очистка, деблоат, заморозка китайских служб и анализ батареи для OnePlus Ace 6T (ColorOS 16 CN).
 .DESCRIPTION
     Воспроизводит конфигурацию проверенного устройства (OnePlus Ace 6T / PLR110 / ColorOS 16 CN01):
     1. Отключение 82 предустановленных пакетов через: pm disable-user --user 0
@@ -20,6 +20,7 @@ param(
     [switch]$Rollback,
     [switch]$OptimizeOnly,
     [switch]$BatteryReport,
+    [switch]$RestoreFeature,
     [string]$AdbPath
 )
 
@@ -656,6 +657,112 @@ function Apply-RollbackConfiguration {
     Write-Host "Откат завершен! Все пакеты возвращены в исходное состояние." -ForegroundColor Green
 }
 
+function Restore-FeatureMenu {
+    param([string]$AdbExe)
+    
+    while ($true) {
+        Write-Header "ВОССТАНОВЛЕНИЕ ОТДЕЛЬНЫХ ФУНКЦИЙ COLOROS"
+        Write-Host "Выберите функцию, которую хотите вернуть на телефон:" -ForegroundColor Yellow
+        Write-Host ""
+        Write-Host " [1] 🏝️  «Остров» (Fluid Cloud / Живые оповещения / Плеер и таймер у камеры)" -ForegroundColor Green
+        Write-Host " [2] 🕒  Always-On Display (AOD / Часы и инфо на выключенном экране)" -ForegroundColor Cyan
+        Write-Host " [3] 📸  Скриншоты 3 пальцами и встроенная запись экрана" -ForegroundColor Cyan
+        Write-Host " [4] 📱  Умная боковая панель (Smart Sidebar)" -ForegroundColor Cyan
+        Write-Host " [5] 🎮  Игровой режим (Game Toolkit / HyperBoost)" -ForegroundColor Cyan
+        Write-Host " [6] 🎙️  Системный диктофон и компас ColorOS" -ForegroundColor Cyan
+        Write-Host " [7] 🚗  CarLink и автомобильные службы (OCar, цифровой ключ)" -ForegroundColor Cyan
+        Write-Host " [8] 🌐  Китайский браузер HeyTap Browser и App Market (разморозка)" -ForegroundColor DarkYellow
+        Write-Host " [0] ⬅️  Назад в главное меню" -ForegroundColor DarkGray
+        Write-Host ""
+        
+        $sub = Read-Host "Ваш выбор"
+        switch ($sub) {
+            "1" {
+                Write-Host "`n[i] Восстановление «Острова» (Fluid Cloud)..." -ForegroundColor Yellow
+                $pkgs = @(
+                    "com.coloros.ocs.opencapabilityservice",
+                    "com.oplus.smartmediacontroller",
+                    "com.oplus.smartengine",
+                    "com.oplus.aiwidgets",
+                    "com.oplus.metis",
+                    "com.coloros.sceneservice"
+                )
+                foreach ($p in $pkgs) {
+                    $res = Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "pm", "enable", "--user", "0", $p)
+                    Write-Host "  [ВКЛЮЧЕНО] $p : $($res.Output)" -ForegroundColor Green
+                }
+                Write-Host "`n[+] «Остров» (Fluid Cloud) успешно восстановлен!" -ForegroundColor Green
+                Write-Host "[!] Перезагрузите смартфон, чтобы ColorOS заново инициализировала службы у камеры." -ForegroundColor Yellow
+                Read-Host "Нажмите Enter для продолжения..."
+            }
+            "2" {
+                Write-Host "`n[i] Восстановление Always-On Display (AOD)..." -ForegroundColor Yellow
+                $res = Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "pm", "enable", "--user", "0", "com.oplus.aod")
+                Write-Host "  [ВКЛЮЧЕНО] com.oplus.aod : $($res.Output)" -ForegroundColor Green
+                Write-Host "`n[+] AOD включён! Перезагрузите смартфон для вступления в силу." -ForegroundColor Green
+                Read-Host "Нажмите Enter для продолжения..."
+            }
+            "3" {
+                Write-Host "`n[i] Восстановление скриншотов и записи экрана..." -ForegroundColor Yellow
+                foreach ($p in @("com.oplus.screenshot", "com.oplus.screenrecorder")) {
+                    $res = Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "pm", "enable", "--user", "0", $p)
+                    Write-Host "  [ВКЛЮЧЕНО] $p : $($res.Output)" -ForegroundColor Green
+                }
+                Write-Host "`n[+] Скриншоты и запись экрана успешно включены!" -ForegroundColor Green
+                Read-Host "Нажмите Enter для продолжения..."
+            }
+            "4" {
+                Write-Host "`n[i] Восстановление умной боковой панели (Smart Sidebar)..." -ForegroundColor Yellow
+                $res = Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "pm", "enable", "--user", "0", "com.coloros.smartsidebar")
+                Write-Host "  [ВКЛЮЧЕНО] com.coloros.smartsidebar : $($res.Output)" -ForegroundColor Green
+                Write-Host "`n[+] Smart Sidebar успешно включена!" -ForegroundColor Green
+                Read-Host "Нажмите Enter для продолжения..."
+            }
+            "5" {
+                Write-Host "`n[i] Восстановление игрового режима (Game Toolkit)..." -ForegroundColor Yellow
+                $res = Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "pm", "enable", "--user", "0", "com.oplus.games")
+                Write-Host "  [ВКЛЮЧЕНО] com.oplus.games : $($res.Output)" -ForegroundColor Green
+                Write-Host "`n[+] Игровой режим успешно включён!" -ForegroundColor Green
+                Read-Host "Нажмите Enter для продолжения..."
+            }
+            "6" {
+                Write-Host "`n[i] Восстановление диктофона и компаса..." -ForegroundColor Yellow
+                foreach ($p in @("com.coloros.soundrecorder", "com.coloros.compass2")) {
+                    $res = Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "pm", "enable", "--user", "0", $p)
+                    Write-Host "  [ВКЛЮЧЕНО] $p : $($res.Output)" -ForegroundColor Green
+                }
+                Write-Host "`n[+] Диктофон и Компас успешно включены!" -ForegroundColor Green
+                Read-Host "Нажмите Enter для продолжения..."
+            }
+            "7" {
+                Write-Host "`n[i] Восстановление CarLink и автомобильных служб..." -ForegroundColor Yellow
+                foreach ($p in @("com.heytap.opluscarlink", "com.oplus.ocar", "com.oplus.cardigitalkey")) {
+                    $res = Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "pm", "enable", "--user", "0", $p)
+                    Write-Host "  [ВКЛЮЧЕНО] $p : $($res.Output)" -ForegroundColor Green
+                }
+                Write-Host "`n[+] Автомобильные службы успешно включены!" -ForegroundColor Green
+                Read-Host "Нажмите Enter для продолжения..."
+            }
+            "8" {
+                Write-Host "`n[i] Разморозка китайского браузера и App Market..." -ForegroundColor Yellow
+                foreach ($p in @("com.heytap.browser", "com.heytap.market", "com.oplus.themestore")) {
+                    $res = Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "pm", "unsuspend", "--user", "0", $p)
+                    Write-Host "  [РАЗМОРОЖЕНО] $p : $($res.Output)" -ForegroundColor Green
+                }
+                Write-Host "`n[+] HeyTap Browser и App Market разморожены!" -ForegroundColor Green
+                Read-Host "Нажмите Enter для продолжения..."
+            }
+            "0" {
+                break
+            }
+            default {
+                Write-Host "Неверный выбор." -ForegroundColor Red
+                Start-Sleep -Seconds 1
+            }
+        }
+    }
+}
+
 function Show-Diagnostics {
     param([string]$AdbExe, [PSCustomObject]$DeviceInfo)
     Write-Header "ДИАГНОСТИКА СОСТОЯНИЯ УСТРОЙСТВА"
@@ -742,18 +849,25 @@ if ($BatteryReport) {
     exit 0
 }
 
+if ($RestoreFeature) {
+    Restore-FeatureMenu -AdbExe $AdbExe
+    exit 0
+}
+
 while ($true) {
-    Write-Header "ГЛАВНОЕ МЕНЮ (СЛЕПОК КОНФИГУРАЦИИ ONEPLUS ACE 6T)"
-    Write-Host "Подключено: $($device.Manufacturer) $($device.Model) [Сборка: $($device.BuildId)]" -ForegroundColor Green
+    Write-Header "ONEPLUS ACE 6T (PLR110) · ЦЕНТР ОПТИМИЗАЦИИ И ДЕБЛОАТА"
+    Write-Host "Смартфон: $($device.Manufacturer) $($device.Model) [Сборка: $($device.BuildId)]" -ForegroundColor Green
+    Write-Host "Статус:   Root не требуется · 100% обратимо · Безопасный режим" -ForegroundColor DarkGray
     Write-Host ""
     Write-Host "Выберите действие:" -ForegroundColor Yellow
-    Write-Host " [1] Применить слепок автора (Отключить 82 пакета + Заморозить 13 пакетов)" -ForegroundColor Green
-    Write-Host " [2] Оптимизация приложений (ART Dexopt) и безопасная очистка кэша" -ForegroundColor Cyan
-    Write-Host " [3] Анализ расхода батареи (Поиск фонового жора и Top App Drain)" -ForegroundColor Yellow
-    Write-Host " [4] Полный откат (Включить 82 пакета + Разморозить 13 пакетов)" -ForegroundColor Magenta
-    Write-Host " [5] Диагностика состояния устройства (версия, заряд, память)" -ForegroundColor White
-    Write-Host " [6] Перезагрузить устройство" -ForegroundColor Gray
-    Write-Host " [0] Выход" -ForegroundColor DarkGray
+    Write-Host " [1] ⚡ Очистить и оптимизировать (Отключить 82 китайских пакета + Заморозить 13)" -ForegroundColor Green
+    Write-Host " [2] 🏝️ Восстановить отдельную функцию (Остров, AOD, Скриншоты, Игры...)" -ForegroundColor Cyan
+    Write-Host " [3] 🚀 Ускорение приложений (ART Dexopt компиляция) и очистка кэша" -ForegroundColor Yellow
+    Write-Host " [4] 🔋 Анализ расхода батареи (Поиск фонового жора и Top App Drain)" -ForegroundColor White
+    Write-Host " [5] ↩️ Полный откат (Включить обратно все 95 пакетов)" -ForegroundColor Magenta
+    Write-Host " [6] 📊 Диагностика устройства (версия ПО, статус батареи, память)" -ForegroundColor Gray
+    Write-Host " [7] 🔄 Перезагрузить смартфон" -ForegroundColor DarkCyan
+    Write-Host " [0] ❌ Выход" -ForegroundColor DarkGray
     Write-Host ""
 
     $choice = Read-Host "Ваш выбор"
@@ -763,22 +877,25 @@ while ($true) {
             Read-Host "Нажмите Enter для возврата в меню..."
         }
         "2" {
+            Restore-FeatureMenu -AdbExe $AdbExe
+        }
+        "3" {
             Optimize-DeviceApps -AdbExe $AdbExe
             Read-Host "Нажмите Enter для возврата в меню..."
         }
-        "3" {
+        "4" {
             Show-BatteryDrainAnalysis -AdbExe $AdbExe
             Read-Host "Нажмите Enter для возврата в меню..."
         }
-        "4" {
+        "5" {
             Apply-RollbackConfiguration -AdbExe $AdbExe
             Read-Host "Нажмите Enter для возврата в меню..."
         }
-        "5" {
+        "6" {
             Show-Diagnostics -AdbExe $AdbExe -DeviceInfo $device
             Read-Host "Нажмите Enter для возврата в меню..."
         }
-        "6" {
+        "7" {
             Invoke-Adb -AdbExe $AdbExe -Arguments @("reboot") | Out-Null
             Write-Host "Команда на перезагрузку отправлена." -ForegroundColor Green
             Read-Host "Нажмите Enter для возврата в меню..."
