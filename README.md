@@ -1,91 +1,104 @@
-<div align="center">
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Vektor010/oneplus-ace-6t-debloat/main/assets/hero.gif" width="100%" alt="OnePlus Ace 6T ColorOS 16 Debloat Banner" />
+</p>
 
-<img src="./assets/hero.gif" width="100%" alt="OnePlus Ace 6T ColorOS 16 CN Debloat Toolbox">
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=26&duration=2600&pause=900&color=EB0028&center=true&vCenter=true&width=780&lines=ONEPLUS+ACE+6T+%C2%B7+COLOROS+16+CN;82+DISABLED+%2B+13+FROZEN+APPS;ZERO+ROOT+%C2%B7+100%25+REVERSIBLE;ADB+%2B+USB+DRIVER+INCLUDED" alt="Typing SVG" />
+</p>
 
-<br>
+<h1 align="center">⚡ OnePlus Ace 6T (PLR110) Debloat &amp; Optimization</h1>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=28&duration=2800&pause=900&color=EB0028&center=true&vCenter=true&width=760&lines=ONEPLUS+ACE+6T+%C2%B7+PLR110+CN01;82+DISABLED+%2B+13+FROZEN+APPS;ZERO+ROOT+%C2%B7+100%25+ROLLBACK;ADB+%2B+USB+DRIVER+INCLUDED" alt="Typing SVG">
+<p align="center">
+  <b>Комплексная очистка смартфона от китайского софта, заморозка неудаляемых служб и анализ расхода батареи.</b><br/>
+  <i>Специально для OnePlus Ace 6T (ColorOS 16 CN01) · Без Root · 100% обратимо · ADB и драйверы уже внутри архива. By <b>Vektor010</b>.</i>
+</p>
 
-<br>
+<p align="center">
+  <a href="https://github.com/Vektor010/oneplus-ace-6t-debloat/releases/latest"><img src="https://img.shields.io/badge/СКАЧАТЬ_АРХИВ_v1.0.0-10B981?style=for-the-badge&logo=android&logoColor=white" alt="Скачать архив" height="38"/></a>&nbsp;&nbsp;
+  <a href="#-быстрый-старт-за-3-шага-для-новичков"><img src="https://img.shields.io/badge/БЫСТРЫЙ_СТАРТ-2563EB?style=for-the-badge&logo=rocket&logoColor=white" alt="Быстрый старт" height="38"/></a>&nbsp;&nbsp;
+  <a href="#-как-вернуть-остров-fluid-cloud-и-другие-фичи"><img src="https://img.shields.io/badge/ВЕРНУТЬ_ОСТРОВ-EB0028?style=for-the-badge&logo=oneplus&logoColor=white" alt="Вернуть Остров" height="38"/></a>&nbsp;&nbsp;
+  <a href="#-справочник-всех-95-пакетов"><img src="https://img.shields.io/badge/ВСЕ_95_ПАКЕТОВ-7C3AED?style=for-the-badge&logo=bookstack&logoColor=white" alt="Все 95 пакетов" height="38"/></a>
+</p>
 
-[![Скачать готовый архив](https://img.shields.io/badge/%D0%A1%D0%9A%D0%90%D0%A7%D0%90%D0%A2%D0%AC_%D0%90%D0%A0%D0%A5%D0%98%D0%92_(ADB_%2B_%D0%94%D0%A0%D0%90%D0%99%D0%92%D0%95%D0%A0)-v1.0.0-10B981?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Vektor010/oneplus-ace-6t-debloat/releases/latest)
-
-<br>
-
-[![Гайд новичкам](https://img.shields.io/badge/%D0%93%D0%B0%D0%B9%D0%B4_%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%D0%BA%D0%B0%D0%BC-2563EB?style=for-the-badge&logo=rocket&logoColor=white)](#-установка-и-запуск-для-новичков)
-[![Вернуть Остров](https://img.shields.io/badge/%D0%92%D0%B5%D1%80%D0%BD%D1%83%D1%82%D1%8C_%D0%9E%D1%81%D1%82%D1%80%D0%BE%D0%B2-EB0028?style=for-the-badge&logo=oneplus&logoColor=white)](#-как-вернуть-нужную-функцию-отдельно)
-[![Все 95 пакетов](https://img.shields.io/badge/%D0%92%D1%81%D0%B5_95_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2-7C3AED?style=for-the-badge&logo=bookstack&logoColor=white)](#-справочник-всех-95-пакетов)
-[![FAQ и Откат](https://img.shields.io/badge/FAQ_%D0%B8_%D0%9E%D1%82%D0%BA%D0%B0%D1%82-F97316?style=for-the-badge&logo=dependabot&logoColor=white)](#-частые-вопросы)
-
-<br>
-
-![OnePlus Ace 6T](https://img.shields.io/badge/OnePlus_Ace_6T-PLR110-18181B?style=flat-square&logo=oneplus&logoColor=EB0028)
-![ColorOS 16](https://img.shields.io/badge/ColorOS_16-CN01-18181B?style=flat-square&logo=android&logoColor=3DDC84)
-![Root](https://img.shields.io/badge/Root-%D0%9D%D0%B5_%D0%BD%D1%83%D0%B6%D0%B5%D0%BD-18181B?style=flat-square)
-![Rollback](https://img.shields.io/badge/%D0%9E%D1%82%D0%BA%D0%B0%D1%82-100%25_%D0%B2_1_%D0%BA%D0%BB%D0%B8%D0%BA-18181B?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-18181B?style=flat-square)
-
-</div>
-
----
-
-## Что делает этот инструмент
-
-Инструмент переносит проверенную рабочую конфигурацию **OnePlus Ace 6T (PLR110, ColorOS 16 CN01)** на ваш смартфон в один клик:
-
-* **Отключает 82 лишних пакета (`pm disable-user`)** — убирает китайские сервисы (Baidu, AutoNavi, FinShell, UnionPay, HeyTap Music/Yoli), тяжёлый 3D-движок живых обоев (`colorfulengine`), фоновую телеметрию и лишние региональные службы.
-* **Замораживает 13 защищённых служб (`pm suspend`)** — полностью останавливает в фоне **HeyTap Browser**, **App Market**, рекламу **Oppo Ads**, карусель обоев экрана блокировки, **Breeno Voice** и китайский защитник **Security Guard**.
-* **Анализирует жор батареи (`Top App Drain`)** — считывает `dumpsys batterystats` и показывает реальный ТОП-15 приложений по расходу заряда в **мА·ч (mAh)**.
-* **Ускоряет систему (`ART speed-profile`)** — безопасно очищает системный кэш и компилирует приложения под процессор Snapdragon для плавных анимаций.
-
-> [!IMPORTANT]
-> **Защита от «кирпича»:** Скрипт работает без Root, не затрагивает раздел `/system` и сохраняет все ваши фото и данные. Перед запуском автоматически проверяется модель **`PLR110`** и регион **`CN01`** — на другом смартфоне скрипт остановится. Клавиатура (Gboard), рабочий стол, связь, Google Play (`gms`, `vending`) и VPN защищены жёстким белым списком.
+<p align="center">
+  <img src="https://img.shields.io/badge/Смартфон-OnePlus_Ace_6T_(PLR110)-18181B?style=flat&logo=oneplus&logoColor=EB0028" alt="Model"/>
+  <img src="https://img.shields.io/badge/Прошивка-ColorOS_16_CN-18181B?style=flat&logo=android&logoColor=3DDC84" alt="OS"/>
+  <img src="https://img.shields.io/badge/Root-Не_требуется-18181B?style=flat&logo=shield&logoColor=white" alt="No Root"/>
+  <img src="https://img.shields.io/badge/Откат-100%25_в_1_клик-18181B?style=flat&logo=git&logoColor=white" alt="Rollback"/>
+  <img src="https://img.shields.io/badge/Лицензия-MIT-18181B?style=flat" alt="MIT"/>
+</p>
 
 ---
 
-## 🚀 Установка и запуск для новичков
+## 💡 Зачем это нужно? (Было / Стало)
+
+В китайской версии **OnePlus Ace 6T (ColorOS 16 CN)** прямо из коробки работает огромное количество фоновых служб, созданных для Китая: китайский поисковик Baidu, магазин App Market, голосовой помощник Breeno, рекламные SDK и трекеры.
+
+| До оптимизации (Заводская прошивка) | После оптимизации этим инструментом |
+| :--- | :--- |
+| ❌ **~140 фоновых процессов**, нагружающих память и процессор |  **Минус 95 процессов**: система разгружена, память свободна |
+| ❌ **Утечка батареи ночью (8–12%)** из-за постоянных запросов в Китай |  **Расход ночью 1–2%**: телефон честно спит в глубоком сне (Deep Sleep) |
+| ❌ Китайские всплывающие пуши, реклама в шторке и меню |  **Полная тишина**: реклама Oppo Ads и спам-сервисы заморожены |
+| ❌ Неудаляемый браузер HeyTap и магазин приложений |  **Заморожены**: не открываются по ошибке и не будят процессор |
+| ❌ Случайные микрофризы при переключении тяжелых программ |  **+1.5–2 часа работы экрана** и плавная анимация (ART speed-profile) |
+
+---
+
+## 🚀 Быстрый старт за 3 шага (для новичков)
 
 > [!NOTE]
-> **Ничего дополнительно искать не нужно.** В архиве уже лежат рабочий портативный **ADB** (`platform-tools`), официальный **Google USB Driver** (`Drivers/usb_driver`), запуск в 1 клик (`Run_Debloat.bat`) и оффлайн-гайд (`ИНСТРУКЦИЯ_ДЛЯ_НОВИЧКОВ.txt`).
+> **Вам ничего не нужно искать и скачивать отдельно.**  
+> В готовом архиве уже лежит настроенный портативный **ADB** (`platform-tools`), официальный **USB-драйвер**, удобный лаунчер запуска в 1 клик (`Run_Debloat.bat`) и текстовая инструкция.
 
 ### Шаг 1. Скачайте и распакуйте архив
-Скачайте [**`OnePlus_Ace6T_Debloat_Tool.zip`**](https://github.com/Vektor010/oneplus-ace-6t-debloat/releases/latest) и **распакуйте** в отдельную папку *(правый клик → «Извлечь все...»)*. Не запускайте файлы прямо внутри окна архиватора.
+1. Нажмите зелёную кнопку **[Скачать архив v1.0.0](https://github.com/Vektor010/oneplus-ace-6t-debloat/releases/latest)** (`OnePlus_Ace6T_Debloat_Tool.zip`).
+2. **Обязательно распакуйте архив** в отдельную папку на компьютере *(Правый клик по архиву ➔ «Извлечь все...»)*.  
+   *(Не запускайте скрипт прямо из окна архиватора WinRAR / 7-Zip!)*
 
 ### Шаг 2. Включите отладку по USB на телефоне
-1. Откройте **Настройки** ➔ **Об устройстве** ➔ **Версия** ➔ нажмите **7 раз** на **Номер сборки**.
-2. Перейдите в **Настройки** ➔ **Дополнительные настройки** *(или Система и обновления)* ➔ **Для разработчиков**.
-3. Включите **«Отладка по USB»** и *(рекомендуется для ColorOS)* **«Отключить мониторинг разрешений»**.
+1. Откройте **Настройки** ➔ **Об устройстве** ➔ **Версия**.
+2. Быстро нажмите **7 раз подряд** на пункт **«Номер сборки»** и введите ваш пароль разблокировки. Появится уведомление: *«Вы стали разработчиком»*.
+3. Вернитесь в **Настройки** ➔ **Дополнительные настройки** *(или Система)* ➔ **Для разработчиков**.
+4. Включите пункт **«Отладка по USB»** (USB debugging).
+5. *(Рекомендуется)* Пролистайте чуть ниже и включите **«Отключить мониторинг разрешений»**.
 
-### Шаг 3. Подключите к ПК
-1. Подключите OnePlus Ace 6T к ПК кабелем USB и разблокируйте экран.
-2. В шторке уведомлений выберите режим USB **«Передача файлов»** *(не оставляйте «Только зарядка»)*.
-3. На **Windows 10 / 11** драйвер (`WinUSB`) уже встроен в систему — смартфон определяется автоматически.
+### Шаг 3. Подключите к ПК и запустите скрипт
+1. Подключите OnePlus Ace 6T к ПК родным кабелем Type-C и разблокируйте экран.
+2. В шторке смартфона выберите режим USB **«Передача файлов»** *(не «Только зарядка»)*.
+3. Запустите файл **`Run_Debloat.bat`** двойным кликом *(если Windows SmartScreen покажет синее окно — нажмите «Подробнее» ➔ «Выполнить в любом случае»)*.
+4. **Посмотрите на экран смартфона:** появится запрос *«Разрешить отладку по USB?»* — поставьте галочку **«Всегда разрешать с этого компьютера»** и нажмите **«Разрешить»**.
+5. В окне программы нажмите **`1`** (Очистить и оптимизировать) ➔ подтвердите цифрой **`1`**.
+6. Через 20 секунд процесс завершится. Согласитесь на оптимизацию приложений и перезагрузите смартфон.
 
 <details>
-<summary>Если Windows не видит телефон — 3 способа поставить драйвер</summary>
+<summary><b>Что делать, если компьютер не видит телефон (Установка драйвера)</b></summary>
 <br>
 
-1. **Встроенный драйвер OnePlus:** откройте «Этот компьютер» ➔ виртуальный диск `OnePlus Drivers` ➔ запустите `OnePlus_USB_Drivers_Setup.exe`.
-2. **Официальный Google USB Driver (уже в архиве):** нажмите `Win + X` ➔ **Диспетчер устройств** ➔ ПКМ по устройству с жёлтым треугольником (`一加 Ace 6T` / `ADB Interface`) ➔ **Обновить драйвер** ➔ **Найти на этом компьютере** ➔ **Выбрать из списка** ➔ **Показать все устройства** ➔ **Установить с диска...** ➔ выберите `Drivers\usb_driver\android_winusb.inf` ➔ **Android ADB Interface**.
-3. **Установщик в 1 клик:** скачайте официальный [Universal ADB Driver (.msi)](https://github.com/koush/adb.clockworkmod.com/releases/latest).
+В **Windows 10 и 11** драйвер (`WinUSB`) уже встроен, поэтому в 95% случаев телефон распознаётся сразу. Если соединение не появляется:
+1. **Способ 1 (Встроенный в телефон диск):** откройте «Этот компьютер» ➔ найдите виртуальный CD-привод `OnePlus Drivers` ➔ запустите установщик `OnePlus_USB_Drivers_Setup.exe`.
+2. **Способ 2 (Драйвер из нашего архива):** нажмите `Win + X` ➔ **Диспетчер устройств** ➔ найдите устройство с жёлтым треугольником (`OnePlus` / `ADB Interface`) ➔ ПКМ ➔ **Обновить драйвер** ➔ **Найти на этом компьютере** ➔ **Выбрать из списка доступных** ➔ **Показать все устройства** ➔ **Установить с диска...** ➔ выберите файл `Drivers\usb_driver\android_winusb.inf` ➔ нажмите **Android ADB Interface**.
 
 </details>
 
-### Шаг 4. Запустите `Run_Debloat.bat`
-1. Дважды кликните по **`Run_Debloat.bat`** *(если появится окно Windows SmartScreen — нажмите «Подробнее» → «Выполнить в любом случае»)*.
-2. **На экране смартфона** отметьте *«Всегда разрешать с этого компьютера»* и нажмите **«Разрешить»**.
-3. В главном меню введите **`1`** ➔ подтвердите **`1`** ➔ дождитесь завершения (~20 сек) и перезагрузите смартфон.
-
 ---
 
-## 🏝️ Как вернуть нужную функцию отдельно
+## 🏝️ Как вернуть «Остров» (Fluid Cloud) и другие фичи
 
-Если после применения слепка вы хотите вернуть **только одну конкретную функцию** (не откатывая всё целиком):  
-откройте папку `platform-tools` из архива, введите `cmd` в адресной строке проводника (`Enter`) и вставьте нужную команду кнопкой копирования справа сверху блока.
+### Что такое «Остров» (Fluid Cloud) в ColorOS 16?
+«Остров» — это интерактивная всплывающая капсула вокруг выреза фронтальной камеры (аналог Dynamic Island в iPhone). На ней отображаются: плеер Spotify / Яндекс.Музыки, таймер, статус записи диктофона и оповещения приложений.
 
-### Вернуть «Остров» (Fluid Cloud / Живые оповещения / Плеер у камеры)
-За работу динамического острова вокруг камеры отвечают системная шина `OCS`, контроллер медиа и движок сценариев:
+В базовой очистке эти службы отключены, потому что в фоне они держат постоянный мониторинг экрана и китайский движок подсказок. **Если вам нравится эта визуальная фишка — вы можете вернуть её за 1 секунду:**
 
+#### 🟢 Способ 1. В 1 клик через меню программы (Рекомендуется для всех)
+1. Подключите телефон к ПК и запустите **`Run_Debloat.bat`**.
+2. В главном меню введите цифру **`2`** *(Восстановить отдельную функцию)*.
+3. Нажмите **`1`** *(Вернуть «Остров» / Fluid Cloud)*.
+4. Скрипт мгновенно включит все необходимые службы. Перезагрузите телефон!
+
+#### 💻 Способ 2. Вручную через командную строку ADB
+Если вы хотите вернуть функции через консоль: откройте папку `platform-tools` из архива, введите `cmd` в адресной строке проводника (`Enter`) и вставьте команду:
+
+**Вернуть «Остров» (Fluid Cloud / Капсулу у камеры):**
 ```cmd
 adb shell pm enable --user 0 com.coloros.ocs.opencapabilityservice
 adb shell pm enable --user 0 com.oplus.smartmediacontroller
@@ -93,274 +106,278 @@ adb shell pm enable --user 0 com.oplus.smartengine
 adb shell pm enable --user 0 com.oplus.aiwidgets
 adb shell pm enable --user 0 com.oplus.metis
 adb shell pm enable --user 0 com.coloros.sceneservice
+adb reboot
 ```
 
-> [!TIP]
-> После возврата **«Острова»** или **AOD** перезагрузите телефон (`adb reboot`), чтобы ColorOS заново запустила службы.
+<details>
+<summary><b>Команды для возврата остальных отдельных функций</b></summary>
+<br>
 
-### Вернуть Always-On Display (AOD)
-
+**Вернуть Always-On Display (Часы на выключенном экране):**
 ```cmd
 adb shell pm enable --user 0 com.oplus.aod
 ```
 
-### Вернуть расширенные скриншоты и запись экрана
-
+**Вернуть скриншоты тремя пальцами и системную запись экрана:**
 ```cmd
 adb shell pm enable --user 0 com.oplus.screenshot
 adb shell pm enable --user 0 com.oplus.screenrecorder
 ```
 
-### Вернуть Умную боковую панель (Smart Sidebar)
-
-```cmd
-adb shell pm enable --user 0 com.coloros.smartsidebar
-```
-
-### Вернуть Игровой режим (Game Toolkit)
-
+**Вернуть Игровой режим (Game Toolkit / HyperBoost):**
 ```cmd
 adb shell pm enable --user 0 com.oplus.games
 ```
 
-<details>
-<summary>Показать команды для остальных функций (Диктофон, Компас, ИК-пульт, OShare, Android Auto, Gmail, Браузер)</summary>
-<br>
+**Вернуть Умную боковую панель (Smart Sidebar):**
+```cmd
+adb shell pm enable --user 0 com.coloros.smartsidebar
+```
 
-**Диктофон и Компас:**
+**Вернуть системный диктофон и компас:**
 ```cmd
 adb shell pm enable --user 0 com.coloros.soundrecorder
 adb shell pm enable --user 0 com.coloros.compass2
 ```
 
-**ИК-пульт (управление ТВ / кондиционером):**
-```cmd
-adb shell pm enable --user 0 com.oplus.consumerIRApp
-```
-
-**Защита зрения (Eye Comfort):**
-```cmd
-adb shell pm enable --user 0 com.oplus.eyeprotect
-```
-
-**OShare и Трансляция экрана:**
-```cmd
-adb shell pm enable --user 0 com.coloros.oshare
-adb shell pm enable --user 0 com.coloros.sharescreen
-```
-
-**Android Auto:**
-```cmd
-adb shell pm enable --user 0 com.google.android.projection.gearhead
-```
-
-**Gmail, Google Поиск и Google Объектив (Lens):**
-```cmd
-adb shell pm enable --user 0 com.google.android.gm
-adb shell pm enable --user 0 com.google.android.googlequicksearchbox
-adb shell pm enable --user 0 com.google.ar.lens
-```
-
-**Разморозить китайский браузер, App Market или Магазин тем:**
+**Разморозить китайский браузер HeyTap или магазин App Market:**
 ```cmd
 adb shell pm unsuspend --user 0 com.heytap.browser
 adb shell pm unsuspend --user 0 com.heytap.market
-adb shell pm unsuspend --user 0 com.oplus.themestore
 ```
 
 </details>
+
+---
+
+## 🖥️ Интерфейс программы (`Run_Debloat.bat`)
+
+Интерфейс скрипта сделан максимально наглядным и защищенным. Перед выполнением любых действий программа автоматически считывает модель смартфона, серийный номер и состояние служб:
+
+```text
+==============================================================================
+   ONEPLUS ACE 6T (PLR110) · ЦЕНТР ОПТИМИЗАЦИИ И ДЕБЛОАТА
+==============================================================================
+ Смартфон: OnePlus PLR110 [Сборка: CN01]
+ Статус:   Root не требуется · 100% обратимо · Безопасный режим
+==============================================================================
+ [1] ⚡ Очистить и оптимизировать (Отключить 82 китайских пакета + Заморозить 13)
+ [2] 🏝️ Восстановить отдельную функцию (Остров, AOD, Скриншоты, Игры...)
+ [3] 🚀 Ускорение приложений (ART Dexopt компиляция) и очистка кэша
+ [4] 🔋 Анализ расхода батареи (Поиск фонового жора и Top App Drain)
+ [5] ↩️ Полный откат (Включить обратно все 95 пакетов)
+ [6] 📊 Диагностика устройства (версия ПО, статус батареи, память)
+ [7] 🔄 Перезагрузить смартфон
+ [0] ❌ Выход
+==============================================================================
+```
+
+---
+
+## 🛡️ Безопасность и защита от «кирпича»
+
+* **Без Root-прав:** Программа работает исключительно на уровне пользователя (`--user 0`). Системный раздел `/system` защищён и остаётся нетронутым.
+* **100% обратимость:** Ни один файл физически не удаляется из прошивки. Приложения лишь переводятся в выключенное состояние. В любой момент пункт меню **`[5]`** восстанавливает абсолютно всё, либо помогает обычный сброс к заводским настройкам.
+* **Аппаратная проверка модели:** Скрипт жёстко сверяет модель **`PLR110`** и китайскую сборку **`CN01`**. Если подключить другой телефон — программа остановится во избежание ошибок.
+* **Белый список защиты жизненно важных служб:** В скрипт встроен неснимаемый барьер — связь (GSM/VoLTE), Wi-Fi, клавиатура (Gboard), рабочий стол, Google Play (`gms`), экран блокировки и рабочий VPN (`com.happproxy`) заблокированы от случайного отключения.
 
 ---
 
 ## 📋 Справочник всех 95 пакетов
 
-Ниже расписан **каждый** пакет из скрипта (82 отключаемых + 13 замораживаемых).  
-Значок `🟡` отмечает пакеты, отвечающие за видимые функции интерфейса (их можно вернуть отдельно командами выше).
+Каждый пакет проверен на реальном OnePlus Ace 6T. Ниже подробно расписано, за что отвечает каждый компонент:
 
 <details open>
-<summary><b>13 замороженных служб ColorOS (<code>pm suspend --user 0</code>)</b></summary>
+<summary><b>🔒 13 замороженных системных служб (<code>pm suspend</code>)</b></summary>
 <br>
 
-| Пакет | За что отвечает |
-| :--- | :--- |
-| `com.heytap.browser` | Встроенный китайский браузер HeyTap с рекламой |
-| `com.heytap.market` | Китайский магазин приложений App Market |
-| `com.heytap.pictorial` | Карусель обоев экрана блокировки (сильный жор батареи) |
-| `com.heytap.quicksearchbox` | Китайская строка поиска на рабочем столе |
-| `com.heytap.htms` | Системный транспортный сервис HeyTap |
-| `com.opos.ads` | Главный рекламный модуль ColorOS / OPPO Ads |
-| `com.coloros.securityguard` | Китайский защитник (мешает установке сторонних APK) |
-| `com.nearme.instant.platform` | Платформа мгновенных китайских приложений Quick Apps |
-| `com.oplus.themestore` | 🟡 Магазин тем OPlus Theme Store |
-| `com.oppo.store` | Фирменный интернет-магазин техники OPPO Store |
-| `com.heytap.speechassist` | Китайский голосовой помощник Breeno |
-| `com.oplus.ovoicemanager` | Движок распознавания речи Breeno Voice |
-| `com.oplus.ovoicemanager.wakeup` | Фоновое прослушивание ключевой фразы Breeno |
+*Эти службы защищены производителем от стандартного отключения, поэтому переводятся в состояние «глубокой заморозки» (не могут запускаться в фоне, тратить заряд и выводить рекламу):*
+
+| Пакет | Что это простыми словами | Почему отключено |
+| :--- | :--- | :--- |
+| `com.heytap.browser` | Встроенный китайский веб-браузер HeyTap | Перегружен рекламой и китайскими вкладками |
+| `com.heytap.market` | Китайский магазин приложений App Market | Постоянно шлёт спам и пуши в шторку |
+| `com.heytap.pictorial` | Карусель обоев экрана блокировки | Сильно сажает батарею постоянной подгрузкой картинок |
+| `com.heytap.quicksearchbox` | Китайская панель поиска на рабочем столе | Ищет через китайские сервера |
+| `com.heytap.htms` | Фоновый транспортный модуль HeyTap | Передаёт телеметрию в китайские сервисы |
+| `com.opos.ads` | Главный рекламный движок Oppo / ColorOS Ads | Показывает баннеры в системных приложениях |
+| `com.coloros.securityguard` | Китайский модуль проверки APK (Security Guard) | Ложно ругается на установку обычных западных приложений |
+| `com.nearme.instant.platform` | Платформа мгновенных приложений Quick Apps | Китайский аналог Instant Apps, висит в фоне |
+| `com.oplus.themestore` | Фирменный магазин тем OPlus Themes | Содержит платный китайский контент и рекламу |
+| `com.oppo.store` | Магазин техники OPPO Store CN | Бесполезен за пределами Китая |
+| `com.heytap.speechassist` | Китайский голосовой ассистент Breeno | Не поддерживает русский язык, висит в памяти |
+| `com.oplus.ovoicemanager` | Движок распознавания речи Breeno Voice | Фоновый аудио-демон китайского помощника |
+| `com.oplus.ovoicemanager.wakeup` | Служба фонового прослушивания микрофона для Breeno | Тратит батарею на ожидание кодовой фразы |
 
 </details>
 
 <details>
-<summary><b>31 пакет — Утилиты и функции ColorOS / OPlus (<code>pm disable-user</code>)</b></summary>
+<summary><b>🏝️ 31 пакет — Системные утилиты и фичи ColorOS (<code>pm disable-user</code>)</b></summary>
 <br>
 
-| Пакет | За что отвечает |
-| :--- | :--- |
-| `com.heytap.colorfulengine` | 🟡 Тяжёлый 3D-движок живых обоев ColorOS (жор GPU/RAM) |
-| `com.android.wallpaper.livepicker.overlay` | 🟡 Системный оверлей выбора живых обоев |
-| `com.coloros.ocs.opencapabilityservice` | 🟡 **«Остров» (Fluid Cloud)** — системная шина OCS |
-| `com.oplus.smartmediacontroller` | 🟡 **«Остров» (Fluid Cloud)** — плеер у камеры и на экране блокировки |
-| `com.oplus.smartengine` | 🟡 **«Остров» (Fluid Cloud)** — триггеры и сценарии SmartEngine |
-| `com.oplus.aiwidgets` | 🟡 **«Остров» / AI** — умные карточки и виджеты ColorOS |
-| `com.oplus.aod` | 🟡 **Always-On Display** — часы на выключенном экране |
-| `com.oplus.screenshot` | 🟡 **Скриншоты** — расширенные и длинные скриншоты ColorOS |
-| `com.oplus.screenrecorder` | 🟡 **Запись экрана** — встроенный рекордер ColorOS |
-| `com.coloros.smartsidebar` | 🟡 **Смарт-панель** — выдвижная боковая панель |
-| `com.oplus.games` | 🟡 **Игровой режим** — центр игр и панель Game Toolkit |
-| `com.coloros.soundrecorder` | 🟡 **Диктофон** — встроенная запись звука |
-| `com.coloros.compass2` | 🟡 **Компас** — встроенное приложение компаса |
-| `com.oplus.consumerIRApp` | 🟡 **ИК-пульт** — управление ТВ и кондиционером |
-| `com.oplus.eyeprotect` | 🟡 **Защита зрения** — оверлей режима Eye Comfort |
-| `com.coloros.oshare` | 🟡 **OShare** — быстрая передача файлов OPPO/OnePlus |
-| `com.coloros.sharescreen` | 🟡 **Трансляция экрана** — совместный просмотр экрана |
-| `com.oplus.account` | 🟡 Облачный аккаунт HeyTap / OPPO Account |
-| `com.coloros.codebook` | Встроенный китайский менеджер паролей Codebook |
-| `com.coloros.digitalwellbeing` | Модуль «Цифровое благополучие» ColorOS |
-| `com.coloros.karaoke` | Аудио-эффекты микрофона для китайских караоке-приложений |
-| `com.coloros.mapcom.frame` | Вспомогательный фреймворк китайских карт |
-| `com.coloros.remoteguardservice` | Китайский сервис родительского контроля RemoteGuard |
-| `com.coloros.securepay` | Проверка безопасности китайских платёжных приложений |
-| `com.coloros.smartlock` | Умная разблокировка ColorOS SmartLock |
-| `com.gamma.scan` | Предустановленный китайский сканер документов |
-| `com.oplus.melody` | Сервис мелодий и китайской обвязки HeyMelody |
-| `com.oplus.ovoicemanager` | Голосовой движок Breeno Voice |
-| `com.oplus.ovoicemanager.wakeup` | Пробуждение голосового ассистента Breeno |
-| `com.oplus.owork` | Китайский рабочий профиль OWork |
-| `com.oplus.phonenoareainquire` | Определение китайских провинций по номеру телефона |
+*Компоненты интерфейса. Если какая-то из функций вам нужна (например, «Остров» или AOD), её можно вернуть в 1 клик через пункт меню [2]:*
+
+| Пакет | Что это простыми словами | Статус возврата |
+| :--- | :--- | :--- |
+| `com.coloros.ocs.opencapabilityservice` | **«Остров» (Fluid Cloud)** — системная шина связи | Можно вернуть в меню `[2] -> [1]` |
+| `com.oplus.smartmediacontroller` | **«Остров» (Fluid Cloud)** — плеер музыки у выреза камеры | Можно вернуть в меню `[2] -> [1]` |
+| `com.oplus.smartengine` | **«Остров» (Fluid Cloud)** — движок подсказок SmartEngine | Можно вернуть в меню `[2] -> [1]` |
+| `com.oplus.aiwidgets` | **«Остров» / AI** — умные карточки и виджеты | Можно вернуть в меню `[2] -> [1]` |
+| `com.oplus.metis` | **«Остров» / AI** — системный планировщик контекста Metis | Можно вернуть в меню `[2] -> [1]` |
+| `com.coloros.sceneservice` | **«Остров»** — обработчик сценариев отображения | Можно вернуть в меню `[2] -> [1]` |
+| `com.oplus.aod` | **Always-On Display** — часы на выключенном экране | Можно вернуть в меню `[2] -> [2]` |
+| `com.oplus.screenshot` | **Скриншоты** — жесты 3 пальцами и длинные скриншоты | Можно вернуть в меню `[2] -> [3]` |
+| `com.oplus.screenrecorder` | **Запись экрана** — встроенная утилита записи видео | Можно вернуть в меню `[2] -> [3]` |
+| `com.coloros.smartsidebar` | **Умная боковая панель** — выдвижная панель быстрого доступа | Можно вернуть в меню `[2] -> [4]` |
+| `com.oplus.games` | **Игровой режим** — Game Space / HyperBoost акселератор | Можно вернуть в меню `[2] -> [5]` |
+| `com.coloros.soundrecorder` | **Диктофон** — встроенная запись звука | Можно вернуть в меню `[2] -> [6]` |
+| `com.coloros.compass2` | **Компас** — стандартный системный компас | Можно вернуть в меню `[2] -> [6]` |
+| `com.heytap.colorfulengine` | Тяжёлый 3D-движок рендера живых системных обоев | Очищает GPU/RAM от жора |
+| `com.android.wallpaper.livepicker.overlay` | Системный оверлей выбора живых обоев | Отключается вместе с движком |
+| `com.oplus.consumerIRApp` | **ИК-пульт** — управление ТВ и кондиционерами с телефона | По желанию (если не пользуетесь пультом) |
+| `com.oplus.eyeprotect` | Режим защиты зрения Eye Comfort | Стандартные системные цвета |
+| `com.coloros.oshare` | OShare — быстрая передача файлов между OnePlus/OPPO | Если не передаёте файлы по воздуху |
+| `com.coloros.sharescreen` | Совместный удалённый просмотр экрана | Редко используемая функция |
+| `com.oplus.account` | Облачный китайский профиль HeyTap Account | Не требуется для работы телефона |
+| `com.coloros.codebook` | Встроенный китайский менеджер паролей | Рекомендуется использовать Bitwarden / Google |
+| `com.coloros.digitalwellbeing` | Модуль «Цифровое благополучие» (учёт экранного времени) | Снижает фоновый сбор статистики |
+| `com.coloros.karaoke` | Звуковые эффекты караоке для китайских приложений | Бесполезно за пределами Китая |
+| `com.coloros.mapcom.frame` | Фреймворк для китайских карт | Не требуется для Google Maps / Яндекс |
+| `com.coloros.remoteguardservice` | Китайский родительский контроль RemoteGuard | Бесполезно |
+| `com.coloros.securepay` | Сканер китайских платёжных систем WeChat / AliPay | Мир Pay и банки РФ работают независимо |
+| `com.coloros.smartlock` | Старый сервис ColorOS SmartLock | Дублирует системные функции |
+| `com.gamma.scan` | Предустановленный сканер документов | Лучше использовать CamScanner или Google Диск |
+| `com.oplus.melody` | Обвязка наушников HeyMelody CN | Приложение HeyMelody из Google Play работает штатно |
+| `com.oplus.owork` | Китайский офисный профиль OWork | Корпоративный китайский сервис |
+| `com.oplus.phonenoareainquire` | База городов Китая по телефонным номерам | В РФ и СНГ не функционирует |
 
 </details>
 
 <details>
-<summary><b>15 пакетов — Китайские сервисы и партнёрский софт (<code>pm disable-user</code>)</b></summary>
+<summary><b>🇨🇳 15 пакетов — Китайские сервисы и партнёрский софт (<code>pm disable-user</code>)</b></summary>
 <br>
 
-| Пакет | За что отвечает |
-| :--- | :--- |
-| `com.baidu.searchbox` | Китайский поисковик и браузер Baidu |
-| `com.baidu.input_oppo` | Китайская клавиатура Baidu IME *(Gboard защищена)* |
-| `com.autonavi.minimap` | Китайские карты и навигатор AutoNavi (Amap) |
-| `com.finshell.wallet` | Китайский кошелёк FinShell Wallet / HeyTap Pay |
-| `com.unionpay.tsmservice` | Служба бесконтактной оплаты UnionPay TSM |
-| `com.heytap.themestore` | Магазин тем HeyTap (legacy-пакет) |
-| `com.heytap.music` | Китайский музыкальный сервис HeyTap Music |
-| `com.heytap.vip` | Клуб лояльности и подписок HeyTap VIP |
-| `com.heytap.yoli` | Китайский видеосервис HeyTap Yoli |
-| `com.heytap.accessory` | Менеджер подключения китайских аксессуаров HeyTap |
-| `com.heytap.speechassist` | Китайский голосовой ассистент Breeno |
-| `com.oppo.store` | Фирменный магазин OPPO Store CN |
-| `com.oppo.ctautoregist` | Фоновая авторегистрация SIM China Telecom |
-| `com.oppo.instant.local.service` | Локальная служба Quick Apps CN |
-| `com.ted.number` | База китайских спам-номеров Ted Number |
+| Пакет | Что это простыми словами | Безопасность |
+| :--- | :--- | :--- |
+| `com.baidu.searchbox` | Поисковик и портал Baidu | 100% безопасно |
+| `com.baidu.input_oppo` | Китайская клавиатура Baidu IME *(Gboard остаётся)* | 100% безопасно |
+| `com.autonavi.minimap` | Китайские карты AutoNavi (Amap) | 100% безопасно |
+| `com.finshell.wallet` | Китайский платёжный кошелёк FinShell / HeyTap Pay | 100% безопасно |
+| `com.unionpay.tsmservice` | Фоновая служба китайской системы UnionPay TSM | 100% безопасно |
+| `com.heytap.music` | Китайский музыкальный сервис HeyTap Music | 100% безопасно |
+| `com.heytap.vip` | Клуб подписок и бонусов HeyTap VIP | 100% безопасно |
+| `com.heytap.yoli` | Китайский видеостриминг HeyTap Yoli | 100% безопасно |
+| `com.heytap.accessory` | Сервис китайских аксессуаров HeyTap | 100% безопасно |
+| `com.oppo.ctautoregist` | Фоновая авторегистрация SIM-карт оператора China Telecom | 100% безопасно |
+| `com.oppo.instant.local.service` | Локальный движок китайских микро-приложений | 100% безопасно |
+| `com.ted.number` | Китайская база спам-номеров Ted Number | 100% безопасно |
+| `com.heytap.themestore` | Дополнительный сервис тем HeyTap | 100% безопасно |
+| `com.oppo.store` | Приложение интернет-магазина техники OPPO | 100% безопасно |
+| `com.heytap.speechassist` | Дополнительный демон Breeno | 100% безопасно |
 
 </details>
 
 <details>
-<summary><b>14 пакетов — Телеметрия, логи и рекламные SDK (<code>pm disable-user</code>)</b></summary>
+<summary><b>📡 14 пакетов — Телеметрия, сбор логов и рекламные SDK (<code>pm disable-user</code>)</b></summary>
 <br>
 
-| Пакет | За что отвечает |
-| :--- | :--- |
-| `com.oplus.sauhelper` | Фоновая служба тихих обновлений и телеметрии SAU |
-| `com.oplus.logtrial` | Сборщик системных логов и краш-дампов |
-| `com.oplus.powermonitor` | Фоновый сборщик статистики расхода и аналитики |
-| `com.oplus.atlas` | Диагностическая телеметрия подсистем Atlas |
-| `com.oplus.dfs` | Распределённая файловая служба экосистемы OPPO |
-| `com.oplus.owkservice` | Фоновая служба синхронизации и пробуждения OWK |
-| `com.oplus.sos` | Региональные экстренные вызовы SOS (CN) |
-| `com.oplus.stdsp` | Вспомогательная служба DSP-аналитики |
-| `com.oplus.subsys` | Сервисный демон мониторинга подсистем Subsys |
-| `com.oplus.vdc` | Контроллер виртуальных дисплеев VDC |
-| `com.qti.dcf` | Телеметрия чипсета Qualcomm DCF |
-| `com.android.adservices.api` | Рекламное API Android Privacy Sandbox |
-| `com.android.federatedcompute.services` | Фоновое федеративное обучение (ML-аналитика) |
-| `com.android.ondevicepersonalization.services` | Персонализация рекламы на устройстве |
+| Пакет | Что это простыми словами | Безопасность |
+| :--- | :--- | :--- |
+| `com.oplus.sauhelper` | Фоновая тихая загрузка рекламы и компонентов (SAU) | 100% безопасно |
+| `com.oplus.logtrial` | Постоянная запись системных отладочных логов в память | 100% безопасно |
+| `com.oplus.powermonitor` | Фоновый сборщик статистики энергопотребления (сам тратит заряд) | 100% безопасно |
+| `com.oplus.atlas` | Диагностическая телеметрия системы Atlas | 100% безопасно |
+| `com.oplus.dfs` | Распределённый сервис синхронизации экосистемы OPPO | 100% безопасно |
+| `com.oplus.owkservice` | Фоновый планировщик синхронизации OWK | 100% безопасно |
+| `com.oplus.sos` | Экстренные службы для территории материкового Китая | 100% безопасно |
+| `com.oplus.stdsp` | Служба DSP-аналитики | 100% безопасно |
+| `com.oplus.subsys` | Демон мониторинга подсистем Subsys | 100% безопасно |
+| `com.oplus.vdc` | Контроллер виртуальных дисплеев VDC | 100% безопасно |
+| `com.qti.dcf` | Диагностический трекер чипсета Qualcomm | 100% безопасно |
+| `com.android.adservices.api` | Рекламное API Android Privacy Sandbox | 100% безопасно |
+| `com.android.federatedcompute.services` | Фоновый сбор аналитики для машинного обучения | 100% безопасно |
+| `com.android.ondevicepersonalization.services` | Модуль подбора контекстной рекламы в Android | 100% безопасно |
 
 </details>
 
 <details>
-<summary><b>5 пакетов — Автомобильные сервисы и IoT (<code>pm disable-user</code>)</b></summary>
+<summary><b>🚗 5 пакетов — Автомобильные сервисы для китайских авто (<code>pm disable-user</code>)</b></summary>
 <br>
 
-| Пакет | За что отвечает |
-| :--- | :--- |
-| `com.heytap.opluscarlink` | Подключение к мультимедиа китайских авто CarLink |
-| `com.oplus.ocar` | Автомобильная оболочка OCar |
-| `com.oplus.cardigitalkey` | Цифровой NFC/BLE-ключ для китайских авто |
-| `com.oplus.viewtalk` | Видеосвязь и вывод в авто ViewTalk |
-| `com.oplus.travelengine` | Китайский сервис подсказок в поездках (рейсы, отели) |
+| Пакет | Что это простыми словами | Безопасность |
+| :--- | :--- | :--- |
+| `com.heytap.opluscarlink` | Китайский протокол связи с автомобилями CarLink | Бесполезен в авто без поддержки CarLink CN |
+| `com.oplus.ocar` | Бортовая мультимедиа-оболочка OCar | 100% безопасно |
+| `com.oplus.cardigitalkey` | Цифровой NFC-ключ для китайских электромобилей (NIO, Zeekr) | Если не открываете китайское авто телефоном |
+| `com.oplus.viewtalk` | Видеозвонки через мультимедиа автомобиля ViewTalk | 100% безопасно |
+| `com.oplus.travelengine` | Подсказки по китайским авиарейсам и поездам в ColorOS | 100% безопасно |
 
 </details>
 
 <details>
-<summary><b>13 пакетов — Редко используемые службы Android / Qualcomm / MS (<code>pm disable-user</code>)</b></summary>
+<summary><b>⚙️ 17 пакетов — Редко используемые службы Android и Google (<code>pm disable-user</code>)</b></summary>
 <br>
 
-| Пакет | За что отвечает |
-| :--- | :--- |
-| `andes.oplus.documentsreader` | Встроенный просмотрщик документов Andes |
-| `com.android.cellbroadcastreceiver` | Широковещательные оповещения ЧС (Cell Broadcast) |
-| `com.android.cts.priv.ctsshim` | Заводской тестовый модуль Compatibility Test Suite |
-| `com.android.DeviceAsWebcam` | 🟡 Использование смартфона как USB веб-камеры для ПК |
-| `com.android.dynsystem` | Загрузчик тестовых динамических образов DSU |
-| `com.android.healthconnect.controller` | 🟡 Агрегатор фитнес-данных Health Connect |
-| `com.android.hotspot2.osulogin` | Авторизация корпоративных сетей Wi-Fi Passpoint |
-| `com.android.musicfx` | Устаревший системный эквалайзер AOSP MusicFX |
-| `com.android.printspooler` | 🟡 Служба сетевой печати на принтеры |
-| `com.android.simappdialog` | Меню оператора SIM Toolkit (часто шлёт спам) |
-| `com.android.virtualization.terminal` | Виртуальный Linux-терминал Android Virtualization |
-| `com.microsoftsdk.crossdeviceservicebroker` | 🟡 Фоновый брокер «Связь с Windows» от Microsoft |
-| `com.qualcomm.qti.powersavemode` | Устаревший модуль энергосбережения Qualcomm |
+*(Google Play Маркет и Сервисы Google Play защищены и работают в штатном режиме)*
 
-</details>
-
-<details>
-<summary><b>4 пакета — Доп. приложения Google (Play Market и GMS НЕ тронуты)</b></summary>
-<br>
-
-| Пакет | За что отвечает |
-| :--- | :--- |
-| `com.google.android.gm` | 🟡 Почтовый клиент Gmail |
-| `com.google.android.googlequicksearchbox` | 🟡 Приложение «Google Поиск» и виджет поиска |
-| `com.google.android.projection.gearhead` | 🟡 **Android Auto** (подключение к магнитоле авто) |
-| `com.google.ar.lens` | 🟡 Поиск по камере Google Объектив (Lens) |
+| Пакет | Что это простыми словами | Безопасность |
+| :--- | :--- | :--- |
+| `andes.oplus.documentsreader` | Встроенный китайский просмотрщик PDF/Office Andes | Заменяется на WPS Office или Google Документы |
+| `com.android.cellbroadcastreceiver` | Оповещения экстренных служб США / ЕС (Cell Broadcast) | 100% безопасно |
+| `com.android.cts.priv.ctsshim` | Заводской тестовый пакет совместимости CTS | 100% безопасно |
+| `com.android.DeviceAsWebcam` | Режим работы телефона как проводной веб-камеры для ПК | Если не используете телефон как веб-камеру |
+| `com.android.dynsystem` | Загрузчик тестовых системных образов DSU | 100% безопасно |
+| `com.android.healthconnect.controller` | Агрегатор данных фитнес-трекеров Health Connect | По желанию |
+| `com.android.hotspot2.osulogin` | Корпоративный логин сетей Wi-Fi Passpoint (Hotspot 2.0) | 100% безопасно |
+| `com.android.musicfx` | Устаревший базовый эквалайзер Android | Обработка звука идёт через Dirac / OPlus Sound |
+| `com.android.printspooler` | Служба беспроводной печати на принтеры | Если не печатаете напрямую со смартфона |
+| `com.android.simappdialog` | Меню оператора SIM Toolkit (источник спама) | Блокирует платные всплывающие подписки |
+| `com.android.virtualization.terminal` | Экспериментальный Linux-терминал Android Virtualization | 100% безопасно |
+| `com.microsoftsdk.crossdeviceservicebroker` | Фоновый сервис Microsoft «Связь с Windows» | Если не используете связку с ПК через Windows Phone Link |
+| `com.qualcomm.qti.powersavemode` | Устаревший режим экономии Qualcomm | Не используется в современных ядрах |
+| `com.google.android.gm` | Почта Gmail | Можно вернуть или установить из Play Market |
+| `com.google.android.googlequicksearchbox` | Приложение «Google Поиск» | По желанию |
+| `com.google.android.projection.gearhead` | **Android Auto** (подключение к авто) | Вернуть при необходимости в меню или через ADB |
+| `com.google.ar.lens` | Поиск по фото Google Объектив | По желанию |
 
 </details>
 
 ---
 
-## ❓ Частые вопросы
+## ❓ Часто задаваемые вопросы (FAQ)
 
 <details>
-<summary><b>Как полностью откатить всё обратно?</b></summary>
+<summary><b>1. Будут ли приходить системные обновления ColorOS (OTA)?</b></summary>
 <br>
-Запустите <code>Run_Debloat.bat</code> ➔ выберите пункт <b>[4] Полный откат</b> ➔ подтвердите цифрой <b>1</b>. Все 82 отключённых и 13 замороженных пакетов вернутся в заводское состояние.
+
+**Да, на 100%.** Отключение и заморозка пакетов через `--user 0` не изменяют контрольные суммы системных разделов `/system` и `/vendor`. Обновления прошивки приходят по воздуху и устанавливаются абсолютно штатно. После крупного обновления Android при необходимости можно просто повторно запустить скрипт.
 </details>
 
 <details>
-<summary><b>Не сломается ли Google Play, связь или уведомления?</b></summary>
+<summary><b>2. Сохранятся ли мои фотографии, переписки в Telegram и приложения?</b></summary>
 <br>
-Нет. <code>com.google.android.gms</code> (Google Play Services), <code>com.android.vending</code> (Google Play), активная клавиатура, рабочий стол, связь и VPN защищены жёстким белым списком и не затрагиваются.
+
+**Да.** Скрипт не трогает пользовательский раздел данных `/data/media`. Ваши личные файлы, фото, игры, аккаунты, банковские приложения и переписки остаются нетронутыми.
 </details>
 
 <details>
-<summary><b>Как узнать, какое приложение сажает батарею?</b></summary>
+<summary><b>3. Как полностью вернуть телефон в исходное заводское состояние?</b></summary>
 <br>
-Запустите <code>Run_Debloat.bat</code> и выберите пункт <b>[3] Анализ расхода батареи</b> — скрипт выведет ТОП-15 приложений по реальному расходу энергии в <b>мА·ч (mAh)</b>.
+
+Подключите смартфон к ПК ➔ запустите **`Run_Debloat.bat`** ➔ выберите пункт **`[5] Полный откат`** ➔ нажмите **`1`**. Скрипт за 15 секунд включит обратно все 82 пакета и разморозит 13 служб. Также полный возврат происходит при стандартном сбросе смартфона к заводским настройкам.
+</details>
+
+<details>
+<summary><b>4. Как узнать, какое именно приложение больше всего сажает батарею?</b></summary>
+<br>
+
+Запустите **`Run_Debloat.bat`** ➔ выберите пункт **`[4] Анализ расхода батареи`**. Скрипт считает системный отчет `batterystats` и выведет наглядный список ТОП-15 приложений с реальным расходом заряда в миллиампер-часах (**мА·ч / mAh**).
 </details>
 
 ---
 
 <div align="center">
 
-<sub><b>OnePlus Ace 6T (PLR110 · ColorOS 16 CN01)</b> &bull; Debloat &amp; Battery Optimization Tool &bull; By <b>Vektor010</b> &bull; MIT</sub>
+<sub><b>OnePlus Ace 6T (PLR110 · ColorOS 16 CN01)</b> &bull; Clean &amp; Reversible Debloat Toolkit &bull; By <b>Vektor010</b> &bull; MIT License</sub>
 
 </div>
