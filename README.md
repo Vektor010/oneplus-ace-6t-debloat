@@ -1,20 +1,29 @@
 <div align="center">
 
-<img src="./assets/banner.gif" width="100%" alt="OnePlus Ace 6T ColorOS 16 CN Debloat Toolbox">
-
-<br><br>
-
-### Безопасная очистка, заморозка китайских служб и анализ батареи для **OnePlus Ace 6T (PLR110 · ColorOS 16 CN01)**
-
-Без Root · Автобэкап · Рабочий ADB и USB-драйвер уже в архиве · Полный откат в 1 клик
+<img src="https://raw.githubusercontent.com/Vektor010/oneplus-ace-6t-debloat/main/assets/banner.gif?v=2" width="100%" alt="OnePlus Ace 6T ColorOS 16 CN Debloat Toolbox">
 
 <br>
 
-**[⬇️ Скачать готовый архив `OnePlus_Ace6T_Debloat_Tool.zip` (Releases)](https://github.com/Vektor010/oneplus-ace-6t-debloat/releases/latest)**
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=28&duration=2800&pause=900&color=EB0028&center=true&vCenter=true&width=760&lines=ONEPLUS+ACE+6T+%C2%B7+PLR110+CN01;82+DISABLED+%2B+13+FROZEN+APPS;ZERO+ROOT+%C2%B7+100%25+ROLLBACK;ADB+%2B+USB+DRIVER+INCLUDED" alt="Typing SVG">
 
 <br>
 
-[Инструкция новичкам](#-установка-и-запуск-для-новичков) &nbsp;&bull;&nbsp; [Вернуть «Остров» и функции](#-как-вернуть-нужную-функцию-отдельно) &nbsp;&bull;&nbsp; [Все 95 пакетов](#-справочник-всех-95-пакетов) &nbsp;&bull;&nbsp; [FAQ](#-частые-вопросы)
+[![Скачать готовый архив](https://img.shields.io/badge/%D0%A1%D0%9A%D0%90%D0%A7%D0%90%D0%A2%D0%AC_%D0%90%D0%A0%D0%A5%D0%98%D0%92_(ADB_%2B_%D0%94%D0%A0%D0%90%D0%99%D0%92%D0%95%D0%A0)-v1.0.0-10B981?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Vektor010/oneplus-ace-6t-debloat/releases/latest)
+
+<br>
+
+[![Гайд новичкам](https://img.shields.io/badge/%D0%93%D0%B0%D0%B9%D0%B4_%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%D0%BA%D0%B0%D0%BC-2563EB?style=for-the-badge&logo=rocket&logoColor=white)](#-установка-и-запуск-для-новичков)
+[![Вернуть Остров](https://img.shields.io/badge/%D0%92%D0%B5%D1%80%D0%BD%D1%83%D1%82%D1%8C_%D0%9E%D1%81%D1%82%D1%80%D0%BE%D0%B2-EB0028?style=for-the-badge&logo=oneplus&logoColor=white)](#-как-вернуть-нужную-функцию-отдельно)
+[![Все 95 пакетов](https://img.shields.io/badge/%D0%92%D1%81%D0%B5_95_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2-7C3AED?style=for-the-badge&logo=bookstack&logoColor=white)](#-справочник-всех-95-пакетов)
+[![FAQ и Откат](https://img.shields.io/badge/FAQ_%D0%B8_%D0%9E%D1%82%D0%BA%D0%B0%D1%82-F97316?style=for-the-badge&logo=dependabot&logoColor=white)](#-частые-вопросы)
+
+<br>
+
+![OnePlus Ace 6T](https://img.shields.io/badge/OnePlus_Ace_6T-PLR110-18181B?style=flat-square&logo=oneplus&logoColor=EB0028)
+![ColorOS 16](https://img.shields.io/badge/ColorOS_16-CN01-18181B?style=flat-square&logo=android&logoColor=3DDC84)
+![Root](https://img.shields.io/badge/Root-%D0%9D%D0%B5_%D0%BD%D1%83%D0%B6%D0%B5%D0%BD-18181B?style=flat-square)
+![Rollback](https://img.shields.io/badge/%D0%9E%D1%82%D0%BA%D0%B0%D1%82-100%25_%D0%B2_1_%D0%BA%D0%BB%D0%B8%D0%BA-18181B?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-18181B?style=flat-square)
 
 </div>
 
