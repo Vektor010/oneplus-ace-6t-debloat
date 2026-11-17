@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Vektor010/oneplus-ace-6t-debloat/main/assets/banner.gif?v=2" width="100%" alt="OnePlus Ace 6T ColorOS 16 CN Debloat Toolbox">
+<img src="./assets/hero.gif" width="100%" alt="OnePlus Ace 6T ColorOS 16 CN Debloat Toolbox">
 
 <br>
 
