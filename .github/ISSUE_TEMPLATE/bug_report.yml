@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for reporting an issue! Please ensure you have reviewed [KNOWN_ISSUES.md](../KNOWN_ISSUES.md) before submitting.
+        Thank you for reporting an issue! Please ensure you have reviewed [KNOWN_ISSUES.md](../../docs/guides/KNOWN_ISSUES.md) before submitting.
 
   - type: input
     id: device_model
