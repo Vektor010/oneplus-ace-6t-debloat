@@ -1,0 +1,35 @@
+name: 💡 Feature or Package Request
+description: Propose a new package for debloat, a feature restoration option, or a script enhancement.
+title: "[FEAT]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please verify package names via `adb shell dumpsys package <package_name>` before submitting.
+
+  - type: input
+    id: package_name
+    attributes:
+      label: Target Package Name (if proposing a package)
+      placeholder: "com.example.service"
+
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Description & Justification
+      description: What does this package do, and why should it be disabled, frozen, or restored?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: proposed_action
+    attributes:
+      label: Recommended Action
+      options:
+        - "Safe Disable (pm disable-user)"
+        - "Deep Freeze (pm suspend + AppOps)"
+        - "Granular Feature Restorer Option"
+        - "Whitelist Protection"
+    validations:
+      required: true
