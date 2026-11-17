@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Community Support on 4PDA
+    url: https://4pda.to/forum/index.php?showforum=212
+    about: Ask questions and discuss with Russian OnePlus Ace 6T owners.
+  - name: 📖 Known Issues & FAQ
+    url: https://github.com/Vektor010/oneplus-ace-6t-debloat/blob/main/KNOWN_ISSUES.md
+    about: Read common troubleshooting guides for driver and ADB connection issues.
