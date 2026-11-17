@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090D16"/>
+      <stop offset="55%" stop-color="#101726"/>
+      <stop offset="100%" stop-color="#190C14"/>
+    </linearGradient>
+    <radialGradient id="redGlow" cx="85%" cy="20%" r="55%">
+      <stop offset="0%" stop-color="#EB0028" stop-opacity="0.32"/>
+      <stop offset="60%" stop-color="#EB0028" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#EB0028" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cyanGlow" cx="12%" cy="85%" r="45%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EB0028"/>
+      <stop offset="50%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FFFFFF" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Outer Card -->
+  <rect x="0" y="0" width="1200" height="340" rx="20" fill="url(#bgGrad)"/>
+  <rect x="0" y="0" width="1200" height="340" rx="20" fill="url(#grid)"/>
+  <rect x="0" y="0" width="1200" height="340" rx="20" fill="url(#redGlow)"/>
+  <rect x="0" y="0" width="1200" height="340" rx="20" fill="url(#cyanGlow)"/>
+  <rect x="1" y="1" width="1198" height="338" rx="19" fill="none" stroke="#FFFFFF" stroke-opacity="0.10" stroke-width="1.5"/>
+
+  <!-- Top Accent Bar -->
+  <rect x="56" y="36" width="1088" height="3" rx="1.5" fill="url(#accentLine)" opacity="0.85"/>
+
+  <!-- Top Pill Badge -->
+  <rect x="56" y="60" width="290" height="30" rx="15" fill="#EB0028" fill-opacity="0.16" stroke="#EB0028" stroke-opacity="0.55" stroke-width="1"/>
+  <circle cx="76" cy="75" r="4.5" fill="#FF3B5C"/>
+  <text x="90" y="80" font-family="Segoe UI, -apple-system, Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#FCA5A5" letter-spacing="1.2">PLR110 · COLOROS 16 CN01 · v4.1</text>
+
+  <!-- Right Version Tag -->
+  <rect x="976" y="60" width="168" height="30" rx="15" fill="#10B981" fill-opacity="0.14" stroke="#10B981" stroke-opacity="0.45" stroke-width="1"/>
+  <text x="1060" y="80" text-anchor="middle" font-family="Consolas, monospace" font-size="13" font-weight="700" fill="#6EE7B7">2026 EDITION</text>
+
+  <!-- Main Title -->
+  <text x="56" y="148" font-family="Segoe UI, -apple-system, Roboto, Arial, sans-serif" font-size="48" font-weight="800" fill="#F8FAFC" letter-spacing="-0.8">OnePlus Ace 6T Debloat Toolbox</text>
+
+  <!-- Subtitle -->
+  <text x="56" y="186" font-family="Segoe UI, -apple-system, Roboto, Arial, sans-serif" font-size="19" font-weight="400" fill="#94A3B8">Безопасный слепок конфигурации, заморозка китайских служб, ART Dexopt и аналитика расхода батареи</text>
+
+  <!-- 4 Stat Cards Row -->
+  <!-- Card 1 -->
+  <rect x="56" y="218" width="256" height="84" rx="14" fill="#FFFFFF" fill-opacity="0.045" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="1"/>
+  <text x="78" y="256" font-family="Segoe UI, -apple-system, Roboto, Arial, sans-serif" font-size="28" font-weight="800" fill="#F8FAFC">82 пакета</text>
+  <text x="78" y="282" font-family="Segoe UI, -apple-system, Roboto, Arial, sans-serif" font-size="13.5" fill="#94A3B8">Безопасно отключены (disable-user)</text>
+
+  <!-- Card 2 -->
+  <rect x="334" y="218" width="256" height="84" rx="14" fill="#FFFFFF" fill-opacity="0.045" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="1"/>
+  <text x="356" y="256" font-family="Segoe UI, -apple-system, Roboto, Arial, sans-serif" font-size="28" font-weight="800" fill="#38BDF8">13 служб</text>
+  <text x="356" y="282" font-family="Segoe UI, -apple-system, Roboto, Arial, sans-serif" font-size="13.5" fill="#94A3B8">Заморожены (Browser, Market, Ads)</text>
+
+  <!-- Card 3 -->
+  <rect x="612" y="218" width="256" height="84" rx="14" fill="#FFFFFF" fill-opacity="0.045" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="1"/>
+  <text x="634" y="256" font-family="Segoe UI, -apple-system, Roboto, Arial, sans-serif" font-size="28" font-weight="800" fill="#34D399">ADB + Driver</text>
+  <text x="634" y="282" font-family="Segoe UI, -apple-system, Roboto, Arial, sans-serif" font-size="13.5" fill="#94A3B8">Готовый комплект в одном ZIP</text>
+
+  <!-- Card 4 -->
+  <rect x="890" y="218" width="254" height="84" rx="14" fill="#FFFFFF" fill-opacity="0.045" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="1"/>
+  <text x="912" y="256" font-family="Segoe UI, -apple-system, Roboto, Arial, sans-serif" font-size="28" font-weight="800" fill="#FB923C">100% откат</text>
+  <text x="912" y="282" font-family="Segoe UI, -apple-system, Roboto, Arial, sans-serif" font-size="13.5" fill="#94A3B8">Без Root · Возврат в 1 клик</text>
+</svg>
