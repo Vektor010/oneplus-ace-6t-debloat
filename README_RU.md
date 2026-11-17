@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Vektor010/oneplus-ace-6t-debloat/main/assets/hero.gif" width="100%" alt="OnePlus Ace 6T ColorOS 16 Debloat Banner" />
+  <img src="https://raw.githubusercontent.com/Vektor010/oneplus-ace-6t-debloat/main/assets/animations/hero.gif" width="100%" alt="OnePlus Ace 6T ColorOS 16 Debloat Banner" />
 </p>
 
 <p align="center">
