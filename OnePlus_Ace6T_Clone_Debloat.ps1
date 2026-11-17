@@ -10,8 +10,8 @@
     4. Глубокий анализ расхода батареи (поиск фонового жора по UIDs и пакетам)
     5. Функция полного отката: pm enable --user 0 и pm unsuspend --user 0
 .NOTES
-    Привязка: строго модель PLR110, сборка PLR110_16.0.10.500(CN01).
-    Версия: 4.0 (Battery Analytics & Clone Edition)
+    Привязка: строго модель PLR110, сборка ColorOS 16 CN (CN01).
+    Версия: 4.1 (Fault-Tolerant & Multi-Device Edition)
 #>
 
 [CmdletBinding()]
@@ -23,8 +23,17 @@ param(
     [string]$AdbPath
 )
 
-[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+# Фиксация кодировок UTF-8 для ввода и вывода в консоли
+try { [Console]::InputEncoding = [System.Text.Encoding]::UTF8 } catch {}
+try { [Console]::OutputEncoding = [System.Text.Encoding]::UTF8 } catch {}
 $OutputEncoding = [System.Text.Encoding]::UTF8
+
+# Определение рабочей директории скрипта
+$ScriptDirectory = if ($PSScriptRoot) { $PSScriptRoot } else { Split-Path -Parent $MyInvocation.MyCommand.Definition }
+if (-not $ScriptDirectory) { $ScriptDirectory = (Get-Location).Path }
+
+# Глобальный идентификатор выбранного устройства для изоляции от эмуляторов и других подключений
+$Global:TargetDeviceSerial = $null
 
 # ==============================================================================
 # 1. ПРИВЯЗКА К МОДЕЛИ И РЕГИОНУ (СТРОГО ДЛЯ PLR110 CN01)
@@ -184,7 +193,7 @@ function Write-Log {
     )
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     $logLine = "[$timestamp] [$Level] $Message"
-    $logFile = Join-Path -Path $PSScriptRoot -ChildPath "clone_tool.log"
+    $logFile = Join-Path -Path $ScriptDirectory -ChildPath "clone_tool.log"
     Add-Content -Path $logFile -Value $logLine -Encoding UTF8 -ErrorAction SilentlyContinue
 
     switch ($Level) {
@@ -200,11 +209,11 @@ function Find-AdbExecutable {
     param([string]$CustomPath)
     
     # 1. Приоритет: локальные файлы в папке со скриптом (портативный автономный запуск)
-    if (Test-Path "$PSScriptRoot\platform-tools\adb.exe") {
-        return (Resolve-Path "$PSScriptRoot\platform-tools\adb.exe").Path
+    if (Test-Path "$ScriptDirectory\platform-tools\adb.exe") {
+        return (Resolve-Path "$ScriptDirectory\platform-tools\adb.exe").Path
     }
-    if (Test-Path "$PSScriptRoot\adb.exe") {
-        return (Resolve-Path "$PSScriptRoot\adb.exe").Path
+    if (Test-Path "$ScriptDirectory\adb.exe") {
+        return (Resolve-Path "$ScriptDirectory\adb.exe").Path
     }
 
     # 2. Пользовательский путь
@@ -234,11 +243,18 @@ function Find-AdbExecutable {
 function Invoke-Adb {
     param(
         [string]$AdbExe,
-        [string[]]$Arguments
+        [string[]]$Arguments,
+        [switch]$IgnoreTargetSerial
     )
+    $finalArgs = if ($Global:TargetDeviceSerial -and -not $IgnoreTargetSerial) {
+        @("-s", $Global:TargetDeviceSerial) + $Arguments
+    } else {
+        $Arguments
+    }
+
     $psi = New-Object System.Diagnostics.ProcessStartInfo
     $psi.FileName = $AdbExe
-    $psi.Arguments = $Arguments -join " "
+    $psi.Arguments = $finalArgs -join " "
     $psi.UseShellExecute = $false
     $psi.RedirectStandardOutput = $true
     $psi.RedirectStandardError = $true
@@ -262,29 +278,66 @@ function Test-AdbConnection {
     param([string]$AdbExe)
     Write-Log "Проверка связи с устройством..." "STEP"
     
-    $res = Invoke-Adb -AdbExe $AdbExe -Arguments @("devices")
-    $lines = $res.Output -split "`r?`n" | Where-Object { $_ -and $_ -notmatch "^List of devices attached" }
+    $res = Invoke-Adb -AdbExe $AdbExe -Arguments @("devices") -IgnoreTargetSerial
+    
+    # Фильтрация строк устройств с защитой от логов запуска adb daemon
+    $deviceMatches = @()
+    foreach ($line in ($res.Output -split "`r?`n")) {
+        if ($line -match "^\s*([a-zA-Z0-9_\-\.:]+)\s+(device|unauthorized|offline|recovery|fastboot)\b") {
+            $deviceMatches += [PSCustomObject]@{
+                Serial = $matches[1]
+                State  = $matches[2]
+            }
+        }
+    }
 
-    if (-not $lines -or $lines.Count -eq 0) {
+    if ($deviceMatches.Count -eq 0) {
         Write-Log "Устройство не найдено по USB!" "ERROR"
+        Write-Host ""
+        Write-Host "======================================================================" -ForegroundColor Yellow
+        Write-Host " [!] Устройство не обнаружено через ADB." -ForegroundColor Yellow
+        Write-Host " Рекомендации:" -ForegroundColor Gray
+        Write-Host "  1. Убедитесь, что телефон включен и подключен к ПК качественным кабелем USB." -ForegroundColor Gray
+        Write-Host "  2. Проверьте «Настройки» -> «Для разработчиков» -> «Отладка по USB» (должна быть включена)." -ForegroundColor Gray
+        Write-Host "  3. Разблокируйте экран телефона и проверьте режим подключения в шторке (выберите «Передача файлов»)." -ForegroundColor Gray
+        Write-Host "  4. Если появилось окно «Разрешить отладку по USB?», отметьте «Всегда разрешать» и нажмите «Разрешить»." -ForegroundColor Gray
+        Write-Host "======================================================================" -ForegroundColor Yellow
+        Write-Host ""
         return $null
     }
 
-    $deviceLine = $lines[0]
-    $serial = ($deviceLine -split "`t")[0].Trim()
-    $state = ($deviceLine -split "`t")[1].Trim()
-
-    if ($state -ne "device") {
-        Write-Log "Устройство не готово (статус: '$state'). Требуется 'device'." "WARN"
+    # Обработка состояния unauthorized (ожидание подтверждения на экране)
+    $unauth = $deviceMatches | Where-Object { $_.State -eq "unauthorized" }
+    if ($unauth) {
+        Write-Log "Устройство ($($unauth[0].Serial)) ожидает подтверждения авторизации (unauthorized)." "WARN"
+        Write-Host ""
+        Write-Host "======================================================================" -ForegroundColor Yellow
+        Write-Host " [!] ВНИМАНИЕ: Смартфон подключен, но не авторизован!" -ForegroundColor Yellow
+        Write-Host " Разблокируйте экран вашего OnePlus Ace 6T." -ForegroundColor Cyan
+        Write-Host " В появившемся диалоговом окне «Разрешить отладку по USB?»:" -ForegroundColor Cyan
+        Write-Host " 1. Поставьте галочку [v] «Всегда разрешать с этого компьютера»." -ForegroundColor Cyan
+        Write-Host " 2. Нажмите «Разрешить»." -ForegroundColor Green
+        Write-Host "======================================================================" -ForegroundColor Yellow
+        Write-Host ""
         return $null
     }
+
+    $active = $deviceMatches | Where-Object { $_.State -eq "device" }
+    if ($active.Count -eq 0) {
+        Write-Log "Устройство найдено в статусе '$($deviceMatches[0].State)', требуется статус 'device'." "WARN"
+        return $null
+    }
+
+    # Изоляция целевого устройства по серийному номеру
+    $selected = $active[0]
+    $Global:TargetDeviceSerial = $selected.Serial
 
     $modelRes = Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "getprop", "ro.product.model")
     $manufRes = Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "getprop", "ro.product.manufacturer")
     $buildRes = Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "getprop", "ro.build.display.id")
 
     return [PSCustomObject]@{
-        Serial       = $serial
+        Serial       = $selected.Serial
         Model        = $modelRes.Output
         Manufacturer = $manufRes.Output
         BuildId      = $buildRes.Output
@@ -298,12 +351,18 @@ function Verify-DeviceCompatibility {
     Write-Host "  Сборка:  $($DeviceInfo.BuildId) (Ожидается регион: $TargetRegionToken)"
 
     if ($DeviceInfo.Model -ne $TargetModel) {
-        Write-Log "ОШИБКА: Модель $($DeviceInfo.Model) не поддерживается этим скриптом (строго $TargetModel)." "ERROR"
+        Write-Log "ОШИБКА: Модель '$($DeviceInfo.Model)' не поддерживается этим скриптом (строго $TargetModel)." "ERROR"
+        Write-Host ""
+        Write-Host "[!] ВНИМАНИЕ: Данный скрипт сконфигурирован исключительно для модели $TargetModel (OnePlus Ace 6T)." -ForegroundColor Red
+        Write-Host "Во избежание сбоев в работе системы операция отменена." -ForegroundColor Red
         return $false
     }
 
     if (-not ($DeviceInfo.BuildId -like "*$TargetRegionToken*")) {
         Write-Log "ОШИБКА: Прошивка не содержит признака региона $TargetRegionToken. Скрипт остановлен." "ERROR"
+        Write-Host ""
+        Write-Host "[!] ВНИМАНИЕ: Сборка прошивки '$($DeviceInfo.BuildId)' не содержит региональный токен $TargetRegionToken." -ForegroundColor Red
+        Write-Host "Скрипт оптимизирован строго под китайскую версию ColorOS 16 CN01." -ForegroundColor Red
         return $false
     }
 
@@ -313,24 +372,24 @@ function Verify-DeviceCompatibility {
 
 function Create-BackupSnapshot {
     param([string]$AdbExe)
-    $backupDir = Join-Path -Path $PSScriptRoot -ChildPath "Backups"
+    $backupDir = Join-Path -Path $ScriptDirectory -ChildPath "Backups"
     if (-not (Test-Path $backupDir)) {
-        New-Item -Path $backupDir -ItemType Directory -Force | Out-Null
+        try { New-Item -Path $backupDir -ItemType Directory -Force | Out-Null } catch {}
     }
 
     $timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
     $currentBackup = Join-Path -Path $backupDir -ChildPath "backup_$timestamp"
-    New-Item -Path $currentBackup -ItemType Directory -Force | Out-Null
+    try { New-Item -Path $currentBackup -ItemType Directory -Force | Out-Null } catch {}
 
     Write-Log "Создание резервной копии состояния пакетов..." "STEP"
     
     $disRes = Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "pm", "list", "packages", "-d")
     $disFile = Join-Path -Path $currentBackup -ChildPath "disabled_packages.txt"
-    Set-Content -Path $disFile -Value $disRes.Output -Encoding UTF8
+    Set-Content -Path $disFile -Value $disRes.Output -Encoding UTF8 -ErrorAction SilentlyContinue
 
     $allRes = Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "pm", "list", "packages")
     $allFile = Join-Path -Path $currentBackup -ChildPath "all_packages.txt"
-    Set-Content -Path $allFile -Value $allRes.Output -Encoding UTF8
+    Set-Content -Path $allFile -Value $allRes.Output -Encoding UTF8 -ErrorAction SilentlyContinue
 
     Write-Log "Резервная копия сохранена в: $currentBackup" "SUCCESS"
     return $currentBackup
@@ -437,9 +496,9 @@ function Show-BatteryDrainAnalysis {
             if ($line -match "^\s*$" -or ($line -match "^[A-Za-z]" -and $line -notmatch "Capacity|Computed|actual|Global")) {
                 if ($drainList.Count -gt 5) { break }
             }
-            if ($line -match "^\s*(?:UID\s+)?(\d{4,5}):\s+([0-9\.]+)\s*(.*)$") {
+            if ($line -match "^\s*(?:UID\s+)?([a-zA-Z0-9_\-]+):\s+([0-9\.]+)\s*(.*)$") {
                 $uid = $matches[1]
-                $mah = [double]$matches[2]
+                $mah = [double]::Parse($matches[2], [System.Globalization.CultureInfo]::InvariantCulture)
                 $details = $matches[3]
 
                 $pkg = if ($uidMap.ContainsKey($uid)) { $uidMap[$uid] } else { "Системный процесс (UID $uid)" }
@@ -455,7 +514,7 @@ function Show-BatteryDrainAnalysis {
     }
 
     if ($drainList.Count -eq 0) {
-        Write-Host "  Статистика расхода по приложениям пока пуста (телефон недавно снят с зарядки)." -ForegroundColor DarkGray
+        Write-Host "  Статистика расхода по приложениям пока накапливается (телефон недавно перезагружен или заряжен)." -ForegroundColor DarkGray
     } else {
         Write-Host ""
         Write-Host "ТОП-15 ПРИЛОЖЕНИЙ ПО РАСХОДУ ЭНЕРГИИ:" -ForegroundColor Green
@@ -486,14 +545,16 @@ function Apply-CloneConfiguration {
     )
     Write-Header "ПРИМЕНЕНИЕ СЛЕПКА: ОТКЛЮЧЕНИЕ И ЗАМОРОЗКА"
 
-    Write-Host "ВНИМАНИЕ: Данная процедура воспроизводит точное состояние автора:" -ForegroundColor Yellow
-    Write-Host " - Будут отключены 82 пакета (Baidu, живые обои, телеметрия, утилиты);" -ForegroundColor Yellow
-    Write-Host " - Будут заморожены 13 пакетов (HeyTap Browser, App Market, Ads и др.);" -ForegroundColor Yellow
+    Write-Host "ВНИМАНИЕ: Данная процедура воспроизводит конфигурацию проверенного OnePlus Ace 6T:" -ForegroundColor Yellow
+    Write-Host " - Будут отключены 82 пакета (Baidu, живые обои, телеметрия, региональные утилиты);" -ForegroundColor Yellow
+    Write-Host " - Будут заморожены 13 пакетов (HeyTap Browser, App Market, Ads, Breeno и др.);" -ForegroundColor Yellow
     Write-Host " - VPN (com.happproxy), клавиатура, лаунчер и Google-сервисы защищены." -ForegroundColor Green
     Write-Host ""
 
-    $confirm = Read-Host "Подтвердите применение конфигурации (введите: 'Применить слепок')"
-    if ($confirm -ne "Применить слепок") {
+    Write-Host "Подтвердите применение конфигурации:" -ForegroundColor Yellow
+    Write-Host "  Введите [1] или [Д] (или Y/да) для запуска, либо [0] для отмены: " -NoNewline -ForegroundColor Cyan
+    $confirm = Read-Host
+    if ($confirm -notmatch "^(1|д|да|y|yes|применить|применить слепок)$") {
         Write-Log "Применение отменено пользователем." "WARN"
         return
     }
@@ -546,13 +607,17 @@ function Apply-CloneConfiguration {
     Write-Host "======================================================================" -ForegroundColor Cyan
     Write-Host ""
 
-    $opt = Read-Host "Выполнить финальную оптимизацию приложений (ART Dexopt) и очистку кэша? (д/н)"
-    if ($opt -match "^(д|y|yes)$") {
+    Write-Host "Выполнить финальную оптимизацию приложений (ART Dexopt) и очистку кэша?" -ForegroundColor Yellow
+    Write-Host "  Введите [1] или [Д] (или Y/да) для согласия, либо [0] для пропуска: " -NoNewline -ForegroundColor Cyan
+    $opt = Read-Host
+    if ($opt -match "^(1|д|да|y|yes)$") {
         Optimize-DeviceApps -AdbExe $AdbExe
     }
 
-    $reboot = Read-Host "Рекомендуется перезагрузить устройство. Перезагрузить сейчас? (д/н)"
-    if ($reboot -match "^(д|y|yes)$") {
+    Write-Host "Рекомендуется перезагрузить устройство. Перезагрузить сейчас?" -ForegroundColor Yellow
+    Write-Host "  Введите [1] или [Д] (или Y/да) для перезагрузки, либо [0] для пропуска: " -NoNewline -ForegroundColor Cyan
+    $reboot = Read-Host
+    if ($reboot -match "^(1|д|да|y|yes)$") {
         Invoke-Adb -AdbExe $AdbExe -Arguments @("reboot") | Out-Null
         Write-Host "Команда на перезагрузку отправлена." -ForegroundColor Green
     }
@@ -563,8 +628,10 @@ function Apply-RollbackConfiguration {
     Write-Header "ПОЛНЫЙ ОТКАТ: ВКЛЮЧЕНИЕ И РАЗМОРОЗКА"
 
     Write-Host "Будут включены обратно 82 пакета и разморожены 13 пакетов." -ForegroundColor Yellow
-    $confirm = Read-Host "Подтвердите откат (введите: 'Откат')"
-    if ($confirm -ne "Откат") {
+    Write-Host "Подтвердите полный откат конфигурации:" -ForegroundColor Yellow
+    Write-Host "  Введите [1] или [Д] (или Y/да/откат) для подтверждения, либо [0] для отмены: " -NoNewline -ForegroundColor Cyan
+    $confirm = Read-Host
+    if ($confirm -notmatch "^(1|д|да|y|yes|откат)$") {
         Write-Log "Откат отменён пользователем." "WARN"
         return
     }
@@ -621,18 +688,35 @@ function Show-Diagnostics {
 # ==============================================================================
 $AdbExe = Find-AdbExecutable -CustomPath $AdbPath
 if (-not $AdbExe) {
-    Write-Host "ОШИБКА: ADB не найден в системе. Установите platform-tools." -ForegroundColor Red
+    Write-Host ""
+    Write-Host "[-] ОШИБКА: Исполняемый файл adb.exe не найден!" -ForegroundColor Red
+    Write-Host "Пожалуйста, распакуйте архив полностью, чтобы папка 'platform-tools' находилась рядом со скриптом." -ForegroundColor Yellow
     exit 1
 }
 
-Invoke-Adb -AdbExe $AdbExe -Arguments @("start-server") | Out-Null
-$device = Test-AdbConnection -AdbExe $AdbExe
-if (-not $device) {
-    Write-Host "Устройство не подключено или не авторизовано." -ForegroundColor Red
-    exit 1
+Invoke-Adb -AdbExe $AdbExe -Arguments @("start-server") -IgnoreTargetSerial | Out-Null
+
+$device = $null
+while (-not $device) {
+    $device = Test-AdbConnection -AdbExe $AdbExe
+    if (-not $device) {
+        if ([Console]::IsInputRedirected) {
+            Write-Host "Обнаружен неинтерактивный режим (перенаправленный ввод). Завершение работы." -ForegroundColor Yellow
+            exit 1
+        }
+        Write-Host "Нажмите [Enter] для повторной проверки или введите [0] для выхода: " -NoNewline -ForegroundColor Yellow
+        $retry = Read-Host
+        if ($retry -eq "0") {
+            Write-Host "Выход из программы." -ForegroundColor DarkGray
+            exit 0
+        }
+    }
 }
 
 if (-not (Verify-DeviceCompatibility -DeviceInfo $device)) {
+    Write-Host ""
+    Write-Host "Нажмите [Enter] для выхода..." -ForegroundColor DarkGray
+    Read-Host | Out-Null
     exit 1
 }
 
