@@ -46,6 +46,8 @@ $TargetRegionToken = "CN01"
 # 2. БАЗА ДАННЫХ ПАКЕТОВ: 82 ДЛЯ ОТКЛЮЧЕНИЯ (pm disable-user)
 # ==============================================================================
 $DisablePackages = @(
+    "com.oplus.appdetail",
+    "com.heytap.cloud",
     "andes.oplus.documentsreader",
     "com.android.adservices.api",
     "com.android.cellbroadcastreceiver",
@@ -594,8 +596,13 @@ function Apply-CloneConfiguration {
             continue
         }
         $res = Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "pm", "suspend", "--user", "0", $pkg)
+        # ColorOS 16/17 AppOps Hardening: отбираем фоновые права, чтобы пакет не проснулся
+        Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "cmd", "appops", "set", $pkg, "RUN_IN_BACKGROUND", "ignore") | Out-Null
+        Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "cmd", "appops", "set", $pkg, "RUN_ANY_IN_BACKGROUND", "ignore") | Out-Null
+        Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "cmd", "appops", "set", $pkg, "POST_NOTIFICATION", "ignore") | Out-Null
+        Invoke-Adb -AdbExe $AdbExe -Arguments @("shell", "cmd", "appops", "set", $pkg, "BOOT_COMPLETED", "ignore") | Out-Null
         if ($res.Output -match "Package .* new suspended state: true") {
-            Write-Host "[$s/$($SuspendPackages.Count)] [ЗАМОРОЖЕНО] $pkg" -ForegroundColor Green
+            Write-Host "[$s/$($SuspendPackages.Count)] [ЗАМОРОЖЕНО + APPOPS] $pkg" -ForegroundColor Green
             $susCount++
         } else {
             Write-Host "[$s/$($SuspendPackages.Count)] [СТАТУС] $pkg : $($res.Output)" -ForegroundColor DarkYellow
