@@ -16,6 +16,7 @@
 <p align="center">
   <a href="https://github.com/Vektor010/oneplus-ace-6t-debloat/releases/latest"><img src="https://img.shields.io/badge/СКАЧАТЬ_АРХИВ_v1.0.0-10B981?style=for-the-badge&logo=android&logoColor=white" alt="Скачать архив" height="38"/></a>&nbsp;&nbsp;
   <a href="#-быстрый-старт-за-3-шага-для-новичков"><img src="https://img.shields.io/badge/БЫСТРЫЙ_СТАРТ-2563EB?style=for-the-badge&logo=rocket&logoColor=white" alt="Быстрый старт" height="38"/></a>&nbsp;&nbsp;
+  <a href="#-где-безопасно-брать-приложения-google-play-rustore-и-чистые-apk"><img src="https://img.shields.io/badge/ГДЕ_БРАТЬ_APK-059669?style=for-the-badge&logo=googleplay&logoColor=white" alt="Где брать APK" height="38"/></a>&nbsp;&nbsp;
   <a href="#-как-вернуть-остров-fluid-cloud-и-другие-фичи"><img src="https://img.shields.io/badge/ВЕРНУТЬ_ОСТРОВ-EB0028?style=for-the-badge&logo=oneplus&logoColor=white" alt="Вернуть Остров" height="38"/></a>&nbsp;&nbsp;
   <a href="#-справочник-всех-95-пакетов"><img src="https://img.shields.io/badge/ВСЕ_95_ПАКЕТОВ-7C3AED?style=for-the-badge&logo=bookstack&logoColor=white" alt="Все 95 пакетов" height="38"/></a>
 </p>
@@ -40,6 +41,7 @@
 | ❌ **Утечка батареи ночью (8–12%)** из-за постоянных запросов в Китай |  **Расход ночью 1–2%**: телефон честно спит в глубоком сне (Deep Sleep) |
 | ❌ Китайские всплывающие пуши, реклама в шторке и меню |  **Полная тишина**: реклама Oppo Ads и спам-сервисы заморожены |
 | ❌ Неудаляемый браузер HeyTap и магазин приложений |  **Заморожены**: не открываются по ошибке и не будят процессор |
+| ❌ Проверки безопасности APK и запросы китайских паролей |  **Мгновенная чистая установка APK** напрямую через систему |
 | ❌ Случайные микрофризы при переключении тяжелых программ |  **+1.5–2 часа работы экрана** и плавная анимация (ART speed-profile) |
 
 ---
@@ -79,6 +81,47 @@
 2. **Способ 2 (Драйвер из нашего архива):** нажмите `Win + X` ➔ **Диспетчер устройств** ➔ найдите устройство с жёлтым треугольником (`OnePlus` / `ADB Interface`) ➔ ПКМ ➔ **Обновить драйвер** ➔ **Найти на этом компьютере** ➔ **Выбрать из списка доступных** ➔ **Показать все устройства** ➔ **Установить с диска...** ➔ выберите файл `Drivers\usb_driver\android_winusb.inf` ➔ нажмите **Android ADB Interface**.
 
 </details>
+
+---
+
+## 🛍️ Где безопасно брать приложения (Google Play, RuStore и чистые APK)
+
+В китайской версии **ColorOS 16 / 17 (CN)** нет предустановленного Google Play Маркета, а китайский App Market перегружен рекламой и китайским софтом.  
+Новички часто теряются и качают сомнительные APK с вирусами. **Вот проверенная инструкция, как за 2 минуты настроить чистую работу всех приложений:**
+
+### 1. Как включить Google-сервисы и установить официальный Google Play Маркет
+В ColorOS базовый фреймворк Google **уже встроен в прошивку**, его не нужно прошивать через кастомное рекавери. Достаточно активировать тумблер:
+1. Откройте **Настройки** ➔ **Пользователи и аккаунты** ➔ выберите пункт **Службы Google Mobile (GMS)** ➔ переведите тумблер во **Включено**.
+2. Скачайте **официальный чистый APK Google Play Маркета** с проверенного мирового каталога [**APKMirror (Google Play Store)**](https://www.apkmirror.com/apk/google-inc/google-play-store/):
+   * Выбирайте последнюю стабильную версию (метка **Release**, не бета);
+   * Скачайте файл с типом **APK** (не Bundle) и архитектурой `universal` или `arm64-v8a`;
+   * Установите файл на смартфоне — появится полноценный Google Play Маркет, в который можно войти под своим аккаунтом Google.
+
+---
+
+### 2. Где безопасно качать российские приложения (Банки, Госуслуги, Такси)
+Из-за санкций многие российские приложения удалены из Google Play. **Никогда не скачивайте банковские клиенты с неизвестных сайтов в поисковиках!**
+
+* 🇷🇺 **[RuStore (Официальный сайт)](https://www.rustore.ru/)** — официальный российский магазин приложений от VK и Минцифры РФ. В нём есть СберБанк, Т-Банк, ВТБ, Альфа-Банк, Госуслуги, Мир Pay, Яндекс-сервисы и 2ГИС. Устанавливается один раз и сам автоматически обновляет все приложения в фоне.
+* 🏦 **Официальные сайты банков** — если вам не нужен отдельный магазин, скачивайте приложения только с официальных доменов:
+  * **СберБанк:** [sberbank.ru/ru/person/dist_services/sberbank-online-android](https://www.sberbank.ru/ru/person/dist_services/sberbank-online-android)
+  * **Т-Банк (Тинькофф):** [tbank.ru/apps/](https://www.tbank.ru/apps/)
+  * **ВТБ:** [vtb.ru/personal/online-servisy/vtb-online/](https://www.vtb.ru/personal/online-servisy/vtb-online/)
+  * **Альфа-Банк:** [alfabank.ru/everyday/online/alfamobile/](https://alfabank.ru/everyday/online/alfamobile/)
+
+---
+
+### 3. Где безопасно качать зарубежные и англоязычные программы (Чистые APK без вирусов)
+Если вам нужны международные приложения, которых нет в RuStore, или вы хотите пользоваться софтом без ввода аккаунта Google:
+
+* 🌐 **[Aurora Store (Официальный сайт)](https://auroraoss.com/)** *(или на [F-Droid](https://f-droid.org/packages/com.aurora.store/))*:  
+  Лучший открытый (Open Source) клиент каталога Google Play. Позволяет скачивать **любые оригинальные приложения напрямую с серверов Google** в режиме «Анонимно» (без ввода своего Google-аккаунта). Имеет встроенный автообновлятор и не содержит рекламы.
+* 🛡️ **[APKMirror (apkmirror.com)](https://www.apkmirror.com/)**:  
+  Крупнейший в мире каталог оригинальных Android APK от команды Android Police. Все файлы проверяются по криптографическим подписям разработчиков (SHA256/MD5). Идеально подходит для ручного скачивания браузеров, мессенджеров (Telegram, WhatsApp) и утилит.
+* 📦 **[F-Droid (f-droid.org)](https://f-droid.org/)**:  
+  Главный каталог свободного ПО с открытым исходным кодом (FOSS). Здесь живут безопасные клиенты AdGuard, VPN, плееры и утилиты без слежки и трекеров.
+* 📱 **[4PDA (4pda.to)](https://4pda.to/forum/index.php?showforum=212)**:  
+  Крупнейшее сообщество энтузиастов. Проверенные темы модификаций, YouTube ReVanced, моды плееров и обсуждения прошивок OnePlus.
 
 ---
 
@@ -322,6 +365,8 @@ adb shell pm unsuspend --user 0 com.heytap.market
 
 | Пакет | Что это простыми словами | Безопасность |
 | :--- | :--- | :--- |
+| `com.oplus.appdetail` | **Secure App Installation** — перехватчик установки APK в китайский маркет | 100% безопасно (возвращает чистую установку) |
+| `com.heytap.cloud` | Китайское облачное хранилище HeyTap Cloud | 100% безопасно |
 | `andes.oplus.documentsreader` | Встроенный китайский просмотрщик PDF/Office Andes | Заменяется на WPS Office или Google Документы |
 | `com.android.cellbroadcastreceiver` | Оповещения экстренных служб США / ЕС (Cell Broadcast) | 100% безопасно |
 | `com.android.cts.priv.ctsshim` | Заводской тестовый пакет совместимости CTS | 100% безопасно |
