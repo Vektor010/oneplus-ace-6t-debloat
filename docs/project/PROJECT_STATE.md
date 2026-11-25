@@ -2,14 +2,14 @@
 
 **Project**: AceDebloat (OnePlus Ace 6T & ColorOS 16/17 Debloat & Performance Toolkit)  
 **Maintainer**: Vektor010  
-**Current Version**: `v1.1.0`  
-**Last Updated**: 2026-11-17  
+**Current Version**: `v1.2.0` (Engine `v5.0`)  
+**Last Updated**: 2026-11-25  
 **State**: Production Ready / CI Validated  
 
 ---
 
 ## 1. Executive Summary
-AceDebloat provides an automated, rootless, zero-brick optimization pipeline specifically designed for the **OnePlus Ace 6T (PLR110)** running **ColorOS 16/17 (CN01)**. It strips 86 unnecessary telemetry, carrier, and regional bloatware components, freezes 13 protected system services with AppOps hardening, decouples package installer verification, and provides 1-click restoration for critical user-facing features (Fluid Cloud, AOD, screenshots, gaming tools).
+AceDebloat provides an automated, rootless, zero-brick optimization pipeline specifically designed for the **OnePlus Ace 6T (PLR110)** running **ColorOS 16/17**. It disables **82** unnecessary telemetry, carrier, and regional bloatware packages (`pm disable-user`), freezes **13** protected system services (`pm suspend` + AppOps hardening) without ever deleting files (`pm uninstall` is not used), decouples `com.oplus.appdetail` installer verification, and provides bilingual (EN/RU) 1-click restoration and full rollback.
 
 ---
 
