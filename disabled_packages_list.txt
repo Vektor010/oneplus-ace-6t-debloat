@@ -1,138 +1,105 @@
 # ==============================================================================
 # СПРАВОЧНЫЙ КАТАЛОГ ПАКЕТОВ: ONEPLUS ACE 6T (PLR110)
-# Прошивка: ColorOS 16 CN (сборка PLR110_16.0.10.500(CN01))
+# Прошивка: ColorOS 16 / 17 CN
 # Репозиторий: https://github.com/Vektor010/oneplus-ace-6t-debloat
+# ВАЖНО: Ни один пакет НЕ удаляется (pm uninstall не используется).
 # ==============================================================================
 
-### ЧАСТЬ 1: 82 ПАКЕТА ДЛЯ ОТКЛЮЧЕНИЯ (pm disable-user --user 0)
-# Полностью отключаются в пространстве пользователя. Не запускаются в фоне, не тратят батарею и RAM.
+### ЧАСТЬ 1: 82 ПАКЕТОВ ДЛЯ ОТКЛЮЧЕНИЯ (pm disable-user --user 0)
+com.oplus.appdetail                        # Перехватчик установки APK (отправляет в китайский маркет)
+com.heytap.cloud                           # Китайское облачное хранилище HeyTap Cloud
+andes.oplus.documentsreader                # Встроенный просмотрщик документов Andes
+com.android.adservices.api                 # Рекламное API Android Privacy Sandbox
+com.android.cellbroadcastreceiver          # Широковещательные оповещения ЧС (Cell Broadcast)
+com.android.cts.priv.ctsshim               # Заводской тестовый пакет совместимости CTS
+com.android.DeviceAsWebcam                 # Использование смартфона как USB веб-камеры
+com.android.dynsystem                      # Загрузчик тестовых динамических образов DSU
+com.android.federatedcompute.services      # Фоновое федеративное обучение (ML-аналитика)
+com.android.healthconnect.controller       # Агрегатор фитнес-данных Health Connect
+com.android.hotspot2.osulogin              # Авторизация корпоративных сетей Wi-Fi Passpoint
+com.android.musicfx                        # Устаревший системный эквалайзер AOSP MusicFX
+com.android.ondevicepersonalization.services # Модуль подбора персонализированной рекламы
+com.android.printspooler                   # Служба сетевой печати на принтеры
+com.android.simappdialog                   # Меню оператора SIM Toolkit (источник спама)
+com.android.virtualization.terminal        # Экспериментальный Linux-терминал Android Virtualization
+com.android.wallpaper.livepicker.overlay   # Системный оверлей выбора живых обоев
+com.autonavi.minimap                       # Китайские карты и навигатор AutoNavi (Amap)
+com.baidu.input_oppo                       # Китайская клавиатура Baidu IME (Gboard защищена)
+com.baidu.searchbox                        # Китайский поисковик и браузер Baidu
+com.coloros.codebook                       # Встроенный китайский менеджер паролей Codebook
+com.coloros.compass2                       # Встроенный компас ColorOS (возврат: [2]->[6])
+com.coloros.digitalwellbeing               # Модуль «Цифровое благополучие» (учёт времени)
+com.coloros.karaoke                        # Эффекты микрофона для китайских караоке-приложений
+com.coloros.mapcom.frame                   # Вспомогательный фреймворк китайских карт
+com.coloros.ocs.opencapabilityservice      # «Остров» (Fluid Cloud) — системная шина OCS (возврат: [2]->[1])
+com.coloros.oshare                         # OShare — быстрая передача файлов OPPO/OnePlus
+com.coloros.remoteguardservice             # Китайский сервис родительского контроля RemoteGuard
+com.coloros.sceneservice                   # «Остров» (Fluid Cloud) — обработчик сценариев (возврат: [2]->[1])
+com.coloros.securepay                      # Проверка безопасности китайских платёжных систем
+com.coloros.sharescreen                    # Совместный удалённый просмотр экрана
+com.coloros.smartlock                      # Устаревший сервис разблокировки ColorOS SmartLock
+com.coloros.smartsidebar                   # Умная боковая панель Smart Sidebar (возврат: [2]->[4])
+com.coloros.soundrecorder                  # Системный диктофон ColorOS (возврат: [2]->[6])
+com.finshell.wallet                        # Китайский кошелёк FinShell Wallet / HeyTap Pay
+com.gamma.scan                             # Предустановленный китайский сканер документов
+com.google.android.gm                      # Почтовый клиент Gmail (можно скачать из Play Store)
+com.google.android.googlequicksearchbox    # Приложение «Google Поиск» и виджет
+com.google.android.projection.gearhead     # Android Auto (подключение к магнитоле авто)
+com.google.ar.lens                         # Поиск по камере Google Объектив (Lens)
+com.heytap.accessory                       # Менеджер подключения китайских аксессуаров HeyTap
+com.heytap.colorfulengine                  # Тяжёлый 3D-движок живых обоев (высокий жор GPU/RAM)
+com.heytap.music                           # Китайский музыкальный сервис HeyTap Music
+com.heytap.opluscarlink                    # Связь с китайскими авто CarLink (возврат: [2]->[7])
+com.heytap.themestore                      # Сервис тем HeyTap Theme Store (legacy)
+com.heytap.vip                             # Клуб лояльности и подписок HeyTap VIP
+com.heytap.yoli                            # Китайский видеосервис HeyTap Yoli
+com.microsoftsdk.crossdeviceservicebroker  # Фоновый брокер «Связь с Windows» от Microsoft
+com.oplus.account                          # Китайский облачный аккаунт HeyTap / OPPO
+com.oplus.aiwidgets                        # «Остров» / AI — умные карточки и виджеты (возврат: [2]->[1])
+com.oplus.aod                              # Always-On Display — часы на выключенном экране (возврат: [2]->[2])
+com.oplus.atlas                            # Диагностическая телеметрия подсистем Atlas
+com.oplus.cardigitalkey                    # Цифровой NFC/BLE-ключ для авто (возврат: [2]->[7])
+com.oplus.consumerIRApp                    # ИК-пульт управления ТВ и кондиционером
+com.oplus.dfs                              # Распределённая файловая служба экосистемы OPPO
+com.oplus.eyeprotect                       # Дополнительный оверлей защиты зрения Eye Comfort
+com.oplus.games                            # Игровой режим Game Toolkit / HyperBoost (возврат: [2]->[5])
+com.oplus.logtrial                         # Постоянный сборщик отладочных логов и дампов
+com.oplus.melody                           # Китайская обвязка наушников HeyMelody CN
+com.oplus.metis                            # «Остров» / AI — планировщик контекста Metis (возврат: [2]->[1])
+com.oplus.ocar                             # Автомобильная оболочка OCar (возврат: [2]->[7])
+com.oplus.owkservice                       # Фоновая служба пробуждения и синхронизации OWK
+com.oplus.owork                            # Китайский рабочий профиль OWork
+com.oplus.phonenoareainquire               # Определение китайских провинций по номеру телефона
+com.oplus.powermonitor                     # Фоновый сборщик статистики расхода и аналитики
+com.oplus.sauhelper                        # Фоновая служба тихих обновлений и телеметрии SAU
+com.oplus.screenrecorder                   # Встроенная запись экрана ColorOS (возврат: [2]->[3])
+com.oplus.screenshot                       # Скриншоты 3 пальцами и длинные скриншоты (возврат: [2]->[3])
+com.oplus.smartengine                      # «Остров» (Fluid Cloud) — движок сценариев (возврат: [2]->[1])
+com.oplus.smartmediacontroller             # «Остров» (Fluid Cloud) — плеер у выреза камеры (возврат: [2]->[1])
+com.oplus.sos                              # Региональные экстренные вызовы SOS (Китай)
+com.oplus.stdsp                            # Вспомогательная служба DSP-аналитики
+com.oplus.subsys                           # Сервисный демон мониторинга подсистем Subsys
+com.oplus.travelengine                     # Китайский сервис подсказок в поездках
+com.oplus.vdc                              # Контроллер виртуальных дисплеев VDC
+com.oplus.viewtalk                         # Видеосвязь и трансляция в авто ViewTalk
+com.oppo.ctautoregist                      # Фоновая авторегистрация SIM China Telecom
+com.oppo.instant.local.service             # Локальная служба Quick Apps CN
+com.qti.dcf                                # Телеметрия чипсета Qualcomm DCF
+com.qualcomm.qti.powersavemode             # Устаревший модуль энергосбережения Qualcomm
+com.ted.number                             # База китайских спам-номеров Ted Number
+com.unionpay.tsmservice                    # Служба бесконтактной оплаты UnionPay TSM
 
-[КИТАЙСКИЕ РЕГИОНАЛЬНЫЕ СЛУЖБЫ И ПАРТНЕРСКИЙ СОФТ]
-com.baidu.searchbox                      # Поисковый сервис Baidu
-com.baidu.input_oppo                     # Предустановленная китайская клавиатура Baidu
-com.autonavi.minimap                     # Карты и навигация AutoNavi (Amap)
-com.oppo.store                           # Китайский фирменный магазин Oppo Store
-com.finshell.wallet                      # Платежный шлюз и кошелек FinShell Wallet
-com.unionpay.tsmservice                  # Сервис бесконтактной оплаты UnionPay TSM
-com.heytap.themestore                    # Магазин тем HeyTap
-com.heytap.music                         # Китайский музыкальный сервис HeyTap Music
-com.heytap.vip                           # Членство HeyTap VIP Club
-com.heytap.yoli                          # Китайский стриминг видео HeyTap Yoli
-com.oppo.ctautoregist                    # Фоновая авторегистрация сим-карты China Telecom
-com.oppo.instant.local.service           # Локальный сервис Quick Apps CN
-com.ted.number                           # База идентификации китайских номеров Ted
-
-[ЖИВЫЕ ОБОИ И ГРАФИЧЕСКИЙ ДВИЖОК COLOROS]
-com.heytap.colorfulengine                # Тяжелый 3D/OpenGL движок живых обоев ColorOS (жор GPU и RAM)
-com.android.wallpaper.livepicker.overlay # Системный оверлей пикера живых обоев
-
-[АВТОМОБИЛЬНЫЕ СЕРВИСЫ И IOT (CARLINK, OCAR)]
-com.heytap.opluscarlink                  # Подключение к китайским авто CarLink
-com.oplus.ocar                           # Служба OCar (CarPlay аналог для китайских брендов)
-com.oplus.cardigitalkey                  # Цифровой ключ автомобиля (NFC/BLE)
-com.oplus.viewtalk                       # Видеосвязь и трансляция экрана в авто ViewTalk
-com.oplus.travelengine                   # Движок подсказок путешествий TravelEngine
-
-[ТЕЛЕМЕТРИЯ, ЛОГИ И СБОР ДАННЫХ]
-com.oplus.sauhelper                      # Фоновый сервис автообновлений и телеметрии SAU
-com.oplus.logtrial                       # Фоновый сборщик отладочных логов и краш-репортов
-com.oplus.powermonitor                   # Фоновый трекер энергопотребления PowerMonitor
-com.qti.dcf                              # Телеметрия чипсета Qualcomm Device Configuration Framework
-com.android.adservices.api               # Модуль рекламной аналитики Android Privacy Sandbox
-com.android.federatedcompute.services    # Федеративное машинное обучение Android
-com.android.ondevicepersonalization.services # Персонализация рекламы Android
-com.oplus.atlas                          # Системная телеметрия Atlas
-
-[ВСТРОЕННЫЕ КИТАЙСКИЕ УТИЛИТЫ И АССИСТЕНТЫ]
-com.gamma.scan                           # Китайский сканер документов Gamma Scan
-com.coloros.codebook                     # Менеджер паролей ColorOS Codebook
-com.coloros.compass2                     # Встроенный компас ColorOS
-com.coloros.digitalwellbeing             # Модифицированное цифровое благополучие ColorOS
-com.coloros.karaoke                      # Модуль обратной связи караоке ColorOS
-com.coloros.mapcom.frame                 # Вспомогательный фреймворк карт
-com.coloros.ocs.opencapabilityservice    # Служба Open Capability Service
-com.coloros.oshare                       # Быстрый обмен файлами OShare (аналог Quick Share)
-com.coloros.remoteguardservice           # Сервис удаленного родительского контроля RemoteGuard
-com.coloros.securepay                    # Платежная защита ColorOS SecurePay
-com.coloros.sharescreen                  # Совместный доступ к экрану ShareScreen
-com.coloros.smartlock                    # Умная разблокировка ColorOS
-com.coloros.smartsidebar                 # Умная боковая смарт-панель Smart Sidebar
-com.coloros.soundrecorder                # Встроенный диктофон ColorOS
-com.heytap.accessory                     # Менеджер китайских аксессуаров HeyTap
-com.heytap.speechassist                  # Китайский голосовой помощник Breeno
-com.oplus.account                        # Аккаунт HeyTap / Oplus
-com.oplus.aiwidgets                      # Виджеты искусственного интеллекта AI Widgets
-com.oplus.aod                            # Always-on-Display ColorOS
-com.oplus.consumerIRApp                  # Пульт управления ИК-портом Consumer IR
-com.oplus.dfs                            # Распределенная файловая система DFS
-com.oplus.eyeprotect                     # Дополнительный оверлей защиты зрения
-com.oplus.games                          # Игровой центр и реклама игр ColorOS Games
-com.oplus.melody                         # Сервис мелодий звонка
-com.oplus.ovoicemanager                  # Голосовой движок Breeno Voice
-com.oplus.ovoicemanager.wakeup           # Пробуждение голосом Breeno Wakeup
-com.oplus.owkservice                     # Служба фоновой синхронизации OWK
-com.oplus.owork                          # Рабочий профиль OWork
-com.oplus.phonenoareainquire             # Определение китайских регионов номеров
-com.oplus.screenrecorder                 # Встроенная запись экрана ColorOS
-com.oplus.screenshot                     # Расширенные скриншоты ColorOS
-com.oplus.smartengine                    # Алгоритмы умных подсказок SmartEngine
-com.oplus.smartmediacontroller           # Контроллер медиа на экране блокировки
-com.oplus.sos                            # Экстренные вызовы SOS CN
-com.oplus.stdsp                          # Системный сервис STDSP
-com.oplus.subsys                         # Вспомогательный системный демон Subsys
-com.oplus.vdc                            # Виртуальный дисплей VDC
-
-[НЕИСПОЛЬЗУЕМЫЕ СИСТЕМНЫЕ СЛУЖБЫ ANDROID / QUALCOMM]
-andes.oplus.documentsreader              # Просмотрщик офисных документов Andes
-com.android.cellbroadcastreceiver        # Оповещения экстренных служб Cell Broadcast
-com.android.cts.priv.ctsshim             # Тестовый шим Compatibility Test Suite
-com.android.DeviceAsWebcam               # Использование телефона как веб-камеры через USB
-com.android.dynsystem                    # Динамические разделы Dynamic System Updates
-com.android.healthconnect.controller     # Контроллер Health Connect
-com.android.hotspot2.osulogin            # Авторизация Hotspot 2.0 OSU
-com.android.musicfx                      # Базовый эквалайзер Android MusicFX
-com.android.printspooler                 # Служба печати Print Spooler
-com.android.simappdialog                 # Диалоговое окно Sim Tool Kit
-com.android.virtualization.terminal      # Виртуальный терминал Android Virtualization
-com.microsoftsdk.crossdeviceservicebroker# Брокер связки с ПК от Microsoft
-com.qualcomm.qti.powersavemode           # Устаревший энергосберегающий профиль Qualcomm
-
-[GOOGLE КОМПОНЕНТЫ (НЕ ЗАТРАГИВАЮЩИЕ PLAY MARKET И СИНХРОНИЗАЦИЮ)]
-com.google.android.gm                    # Клиент Gmail (почтовик)
-com.google.android.googlequicksearchbox  # Приложение Google Поиск
-com.google.android.projection.gearhead   # Android Auto
-com.google.ar.lens                       # Google Объектив (Google Lens)
-
-
-# ==============================================================================
-### ЧАСТЬ 2: 13 СЛУЖБ ДЛЯ ЗАМОРОЗКИ (pm suspend --user 0)
-# Эти компоненты прошивка ColorOS 16 блокирует при попытке pm disable-user.
-# Команда pm suspend замораживает их процессы, запрещает запуск и скрывает иконки.
-
-1.  com.heytap.browser                   # Встроенный китайский браузер HeyTap
-2.  com.heytap.market                    # Китайский магазин приложений HeyTap App Market
-3.  com.heytap.pictorial                 # Карусель обоев экрана блокировки (активный фоновый жор)
-4.  com.heytap.quicksearchbox            # Поисковая строка ColorOS на рабочем столе
-5.  com.heytap.htms                      # Системный транспортный модуль HeyTap
-6.  com.opos.ads                         # Основной модуль рекламы ColorOS (Oppo Ads)
-7.  com.coloros.securityguard            # Защитник ColorOS Security Guard (ложные тревоги на APK)
-8.  com.nearme.instant.platform          # Платформа мгновенных приложений Instant Apps
-9.  com.oplus.themestore                 # Магазин тем Oplus Theme Store
-10. com.oppo.store                       # Фирменный магазин Oppo
-11. com.heytap.speechassist              # Ассистент Breeno (подвешенная служба)
-12. com.oplus.ovoicemanager              # Менеджер распознавания голоса Breeno
-13. com.oplus.ovoicemanager.wakeup       # Фоновое прослушивание ключевой фразы Breeno
-
-
-# ==============================================================================
-### ЧАСТЬ 3: БЕЛЫЙ СПИСОК (WHITELIST — НИ ПРИ КАКИХ УСЛОВИЯХ НЕ ТРОГАТЬ)
-# android                                # Ядро системы
-# com.android.systemui                   # Интерфейс системы (шторка, навигация)
-# com.android.settings                   # Настройки
-# com.android.phone                      # Телефонная часть / сотовая связь
-# com.android.server.telecom             # Управление вызовами
-# com.google.android.gms                 # Google Play Services (сервисы Google)
-# com.android.vending                    # Google Play Маркет
-# com.google.android.inputmethod.latin   # Gboard / текущая активная клавиатура
-# com.happproxy                          # Пользовательский VPN-клиент
-# Любые пользовательские игры и мессенджеры
+### ЧАСТЬ 2: 13 ЗАЩИЩЁННЫХ СЛУЖБ ДЛЯ ЗАМОРОЗКИ (pm suspend --user 0 + AppOps)
+com.heytap.pictorial                       # Карусель обоев экрана блокировки (сильный жор батареи)
+com.oplus.themestore                       # Фирменный магазин тем OPlus Themes
+com.heytap.market                          # Китайский магазин App Market (защищён от disable-user; заморожен)
+com.coloros.securityguard                  # Китайский защитник (мешает установке сторонних APK)
+com.heytap.speechassist                    # Китайский голосовой ассистент Breeno
+com.opos.ads                               # Главный рекламный модуль ColorOS / OPPO Ads
+com.heytap.browser                         # Встроенный китайский браузер HeyTap с рекламой
+com.heytap.quicksearchbox                  # Китайская строка поиска на рабочем столе
+com.oppo.store                             # Фирменный интернет-магазин техники OPPO Store CN
+com.nearme.instant.platform                # Платформа мгновенных китайских приложений Quick Apps
+com.oplus.ovoicemanager.wakeup             # Фоновое прослушивание микрофона для пробуждения Breeno
+com.heytap.htms                            # Системный транспортный сервис HeyTap
+com.oplus.ovoicemanager                    # Движок распознавания речи Breeno Voice
