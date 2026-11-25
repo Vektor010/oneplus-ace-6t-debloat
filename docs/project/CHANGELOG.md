@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.0 / Engine v5.0] - 2026-11-25
+
+### Fixed & Added
+- **Deadlock-Free Async ADB Engine (`Invoke-Adb`)**: Replaced synchronous `StandardOutput.ReadToEnd()` + `WaitForExit()` (which could deadlock on >4KB stderr or hang indefinitely on dropped USB) with async `DataReceived` stream reading and enforced command timeouts. `Start-AdbDaemon` now launches `adb start-server` without pipe handle inheritance.
+- **Auto-Download Missing Google ADB (`platform-tools`)**: If a user downloads GitHub's source code ZIP instead of the Releases package, the script offers 1-key automatic download of official Google `platform-tools-latest-windows.zip`.
+- **Smart Multi-Device Isolation & Relaxed Build Guard**: Automatically prefers real `PLR110` hardware over running Android emulators; detects `PLR110` on ColorOS 16/17 or converted Global ROMs with a clear confirmation prompt instead of crashing out silently.
+- **Bilingual Console Interface (`EN` / `RU`)**: Auto-detects Windows UI locale, supports `-Lang en|ru`, and includes live `[L]` menu toggle.
+- **Complete AppOps Rollback & Feature [9]**: `Apply-RollbackConfiguration` and Feature `[8]` now reset `cmd appops` (`RUN_IN_BACKGROUND`, `RUN_ANY_IN_BACKGROUND`, `POST_NOTIFICATION`, `BOOT_COMPLETED`) back to `default`, plus added `[9]` to restore `com.oplus.appdetail` and `com.heytap.cloud`.
+- **Battery Drain Profiler UID Mapping Fix**: Translates `u0a<id>` / `u<user>a<id>` UIDs from `dumpsys batterystats` back to numeric UIDs so real app package names appear in Top-15.
+- **Transparent Documentation (82 Disabled + 13 Frozen = 95 Packages, 0 Deleted)**: Clarified `pm disable-user` vs `pm suspend` + AppOps vs `pm uninstall` (never used) and published all 95 package descriptions in both `README.md` and `README_RU.md`.
+
 ## [1.1.0] - 2026-11-17
 
 ### Added
